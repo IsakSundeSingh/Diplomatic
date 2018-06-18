@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\Interfaces\IDiploma.cs" />
     <Compile Include="Services\Interfaces\IDiplomaGenerator.cs" />
     <Compile Include="Classes\Field.cs" />
     <Compile Include="Services\Interfaces\IDiplomaOutputter.cs" />

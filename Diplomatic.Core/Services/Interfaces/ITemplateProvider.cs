@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Diplomatic.Core
 {
-    interface IDiplomaGenerator
+    interface ITemplateProvider
     {
-        IDiploma Generate(Template template);
+        IEnumerable<Template> GetTemplates();
     }
 }
