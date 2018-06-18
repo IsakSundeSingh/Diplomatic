@@ -19,6 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.UITests", "Diplo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.Tests", "Diplomatic.Tests\Diplomatic.Tests.csproj", "{A9334B6C-C495-497C-87D0-23D2DADF3414}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81224382-7B18-441F-9C7E-CC7CEBD114D7} = {81224382-7B18-441F-9C7E-CC7CEBD114D7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
