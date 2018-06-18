@@ -1,14 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using Xunit;
 
 namespace Diplomatic.Tests
 {
-    [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [Fact]
         public void TestMethod1()
         {
+            List<string> yourMom = new List<string>() { "ayy" };
+            Assert.Single(yourMom);
         }
     }
 }
