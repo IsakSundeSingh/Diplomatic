@@ -8,7 +8,9 @@ namespace Diplomatic.Core
     {
         public string FilePath;
         public string TemplateName;
-        public IEnumerable<Field> Fields;
+        public IEnumerable<Field> Fields { get; private set; }
+        [JsonIgnore]
+        public bool IsValid => Fields.All(f => f.IsValid);
 
         public Template(string path, string name, IEnumerable<Field> fields)
         {
@@ -17,7 +19,4 @@ namespace Diplomatic.Core
             Fields = fields;
         }
     }
-
-
-
 }

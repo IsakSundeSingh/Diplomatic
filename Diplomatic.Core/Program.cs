@@ -2,14 +2,9 @@
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
-using Diplomatic.Core;
-using Newtonsoft.Json;
 
-
-namespace Diplomatic
+namespace Diplomatic.Core
 {
-
-
     class testDiplom
     {
         public static void Main()
@@ -18,15 +13,12 @@ namespace Diplomatic
             Field date = new Field("Date", 20, 10, 30, 30);
             Field awardtype = new Field("Award", 20, 10, 30, 30);
             Field signature = new Field("Signature", 30, 10, 30, 30);
-            (string name, int x, int y, int h, int w) = signature;
-
 
             Field[] fields = { awardwinner, date, awardtype, signature };
 
             Template template1 = new Template("./templates/template1.pdf", "template1", fields);
 
-
-            string Json = JsonConvert.SerializeObject(template1);
+            string Json = Newtonsoft.Json.JsonConvert.SerializeObject(template1);
             Console.WriteLine($"{Json}");
 
 
@@ -65,4 +57,5 @@ namespace Diplomatic
     }
 
 }
+
 
