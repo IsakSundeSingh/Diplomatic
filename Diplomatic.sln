@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.UWP", "Diplomatic.UWP\Diplomatic.UWP.csproj", "{6348E6AE-C850-41C2-9FBD-E4A70C56D341}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.UITests", "Diplomatic.UITests\Diplomatic.UITests.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86FD3DB4-B1E4-4FDF-9442-01A9ADC6FAB7} = {86FD3DB4-B1E4-4FDF-9442-01A9ADC6FAB7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.Tests", "Diplomatic.Tests\Diplomatic.Tests.csproj", "{A9334B6C-C495-497C-87D0-23D2DADF3414}"
 EndProject

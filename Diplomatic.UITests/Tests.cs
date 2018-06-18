@@ -22,13 +22,14 @@ namespace Diplomatic.UITests
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			app = AppInitializer.StartApp(platform);
+            app = ConfigureApp.Android.StartApp();
+			//app = AppInitializer.StartApp(platform);
+            app.Repl();
 		}
-
-		[Test]
+        [Test]
 		public void WelcomeTextIsDisplayed()
 		{
-			AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
+			AppResult[] results = app.WaitForElement(c => c.Marked("Choose a template!"));
 			app.Screenshot("Welcome screen.");
 
 			Assert.IsTrue(results.Any());

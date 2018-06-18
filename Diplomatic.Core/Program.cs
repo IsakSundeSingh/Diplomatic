@@ -2,6 +2,9 @@
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
+using Diplomatic.Core;
+using Newtonsoft.Json;
+
 
 namespace Diplomatic
 {
@@ -23,7 +26,7 @@ namespace Diplomatic
             Template template1 = new Template("./templates/template1.pdf", "template1", fields);
 
 
-            string Json = template1.Fetchjson();
+            string Json = JsonConvert.SerializeObject(template1);
             Console.WriteLine($"{Json}");
 
 
@@ -52,7 +55,7 @@ namespace Diplomatic
             page1.Orientation = PageOrientation.Landscape;
             gfx = XGraphics.FromPdfPage(page1);
             // Fetch PDF from out template and write graphics from template onto our "new" page
-            XPdfForm templatedoc = XPdfForm.FromFile(template.filePath);
+            XPdfForm templatedoc = XPdfForm.FromFile(template.FilePath);
             gfx.DrawImage(templatedoc, new XRect(0, 0, templatedoc.PointWidth, templatedoc.PointHeight));
             
             // Saving with new name
@@ -62,5 +65,4 @@ namespace Diplomatic
     }
 
 }
-
 

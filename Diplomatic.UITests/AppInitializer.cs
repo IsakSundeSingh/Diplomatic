@@ -4,16 +4,13 @@ using Xamarin.UITest.Queries;
 
 namespace Diplomatic.UITests
 {
-	public class AppInitializer
-	{
-		public static IApp StartApp(Platform platform)
-		{
-			if (platform == Platform.Android)
-			{
-				return ConfigureApp.Android.StartApp();
-			}
+    public class AppInitializer
+    {
+        public static IApp StartApp(Platform platform)
+        {
 
-			return ConfigureApp.iOS.StartApp();
-		}
-	}
+            return ConfigureApp.Android.StartApp();
+
+        }
+    }
 }
