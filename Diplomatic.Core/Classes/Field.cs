@@ -33,5 +33,13 @@ namespace Diplomatic.Core
             Height = h;
             Width = w;
         }
+
+        public void Deconstruct(out int x, out int y, out int h, out int w)
+        {
+            x = XOffset;
+            y = YOffset;
+            h = Height;
+            w = Width;
+        }
     }
 }
