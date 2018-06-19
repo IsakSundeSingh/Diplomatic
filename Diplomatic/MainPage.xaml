@@ -11,32 +11,24 @@
             <!-- Place new controls here -->
             <Entry Placeholder="{Binding NameLabel}" Text="{Binding Name}"/>
             <DatePicker Date="{Binding Date}" MaximumDate="{Binding MaxDate}"/>
-            <ListView ItemsSource="{Binding ListItems}" HasUnevenRows="True" >
+            
+            <!-- For signatures -->
+            <ListView ItemsSource="{Binding ListItems}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout BackgroundColor="#eee" Orientation="Vertical">
-                                <Grid >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70*"/>
-                                        <ColumnDefinition Width="30*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding Image}" Grid.Column="0" Aspect="AspectFill" Scale="0.3" />
-                                    <Label Text="{Binding Celeb}" Grid.Column="1"/>
-
-                                </Grid>
-
-                            </StackLayout>
-                        </ViewCell>
+                        <ImageCell ImageSource="{Binding Imgsrc}" Text="{Binding Name}" Detail= "{Binding Detail}" TextColor= "#2980b9" DetailColor="#27ae60"> </ImageCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-            <Button Text="{Binding Label}"
-                HorizontalOptions="Center"/>
+            <!-- Signature end-->
+            
+            <Button Text="Next"
+                    BackgroundColor="#27ae60"
+                    TextColor="#FFF"
+                HorizontalOptions="Center"
+                    IsEnabled="False" />
+            
         </StackLayout>
+        
     </ScrollView>
-    
-    
-
 </ContentPage>

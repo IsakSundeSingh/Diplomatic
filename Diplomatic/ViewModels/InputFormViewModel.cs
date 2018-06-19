@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Diplomatic
 {
@@ -21,14 +22,16 @@ namespace Diplomatic
             {
                 new ListItem()
                 {
-                    Image = "johnhancock.png",
-                    Celeb = "John Hancock"
+                    Imgsrc = "johnhancock.png",
+                    Name = "John Hancock",
+                    Detail = ""
 
                 },
                 new ListItem()
                 {
-                    Image = "Icon.png",
-                    Celeb = "Kurt Vonnegut"
+                    Imgsrc = "kurtvonnegut.png",
+                    Name = "Kurt Vonnegut",
+                    Detail = "Balling signature holder"
                 }
             };
         }
@@ -38,8 +41,10 @@ namespace Diplomatic
 
     public class ListItem
     {
-        public string Image { get; set; }
-        public string Celeb { get; set; }
+        public string Imgsrc { get; set; }
+        public string Name { get; set; }
+        public string Detail { get; set; }
+        
 
     }
 }
