@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.iOS", "Diplomatic.iOS\Diplomatic.iOS.csproj", "{EE7E1D42-0BF7-4A64-A8CF-29014B444061}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.UWP", "Diplomatic.UWP\Diplomatic.UWP.csproj", "{6348E6AE-C850-41C2-9FBD-E4A70C56D341}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDB8B215-5C59-4F03-A016-E3C7A8DEABCC} = {CDB8B215-5C59-4F03-A016-E3C7A8DEABCC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.UITests", "Diplomatic.UITests\Diplomatic.UITests.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
 	ProjectSection(ProjectDependencies) = postProject
