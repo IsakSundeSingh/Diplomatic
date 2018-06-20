@@ -63,7 +63,6 @@
     <Compile Include="Classes\Field.cs" />
     <Compile Include="Services\Interfaces\IDiplomaOutputter.cs" />
     <Compile Include="Classes\Template.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\ITemplateProvider.cs" />
   </ItemGroup>
