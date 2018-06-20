@@ -11,5 +11,11 @@ namespace Diplomatic.Views
         {
             InitializeComponent();
         }
+        async void NextPage(object sender, EventArgs e)
+        {
+            var next = new Signatures();
+            // We do not need to submit any info to the page here yet
+            await Navigation.PushAsync(next);
+        }
     }
 }

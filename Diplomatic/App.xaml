@@ -1,8 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Diplomatic.App">
 	<Application.Resources>
-    
+        <Style x:Key="nextPageButton" TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="Green"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
 	</Application.Resources>
 </Application>
