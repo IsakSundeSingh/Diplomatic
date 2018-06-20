@@ -3,6 +3,7 @@ using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,11 +29,11 @@ namespace Diplomatic.Core
         public IDiploma Generate(Template template)
         {
             PdfDocument document = new PdfDocument();
-            document.Info.Title = "Your diploma is ready";
-            document.Info.Author = "Diplomatic 2018";
+            document.Info.Title = template.TemplateName;
+            document.Info.Author = "Diplomatic © 2018";
             document.PageLayout = PdfPageLayout.SinglePage;
 
-            XPdfForm originalPdf = XPdfForm.FromFile(template.FilePath);
+            XPdfForm originalPdf = XPdfForm.FromStream(template.Stream);
 
             PdfPage page = document.AddPage();
             page.Height = originalPdf.PixelHeight;
@@ -42,12 +43,17 @@ namespace Diplomatic.Core
 
             gfx.DrawImage(originalPdf, new XRect(0, 0, page.Width, page.Height));
 
-            XFont font = new XFont("Comic Sans MS", 20, XFontStyle.Bold);
             foreach (var field in template.Fields)
             {
-                (int x, int y, int h, int w) = field;
+                (int x, int y, int w, int h) = field;
+                var fontName = "Comic Sans MS";
+                var fontColor = "Black";
+                var fontSize = (int)(h * 0.8);
+
+                XFont font = new XFont(fontName, fontSize, XFontStyle.Bold);
+                XSolidBrush brush = new XSolidBrush(XColor.FromArgb(Color.FromName(fontColor)));
                 var boundingBox = new XRect(x, y, w, h);
-                gfx.DrawString(field.Value, font, XBrushes.Black, boundingBox, XStringFormats.BottomCenter);
+                gfx.DrawString(field.Value, font, brush, boundingBox, XStringFormats.BottomCenter);
             }
 
             return new PDFDiploma(document);
