@@ -156,4 +156,9 @@
       <Name>Diplomatic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\donaldtrump.png" />
+    <BundleResource Include="Resources\gavinbelson.png" />
+    <BundleResource Include="Resources\waltdisney.png" />
+  </ItemGroup>
 </Project>

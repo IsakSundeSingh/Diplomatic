@@ -10,22 +10,28 @@ namespace Diplomatic.ViewModels
         
         public SignaturePickerViewModel()
         {
-            
+
             SignatureItems = new ImageCell[]
             {
                 // Creating a few signatures for testing purposes
                 new ImageCell()
                 {
-                    ImageSource = "johnhancock.png",
-                    Text = "John Hancock",
-                    Detail = ""
+                    ImageSource = "donaldtrump.png",
+                    Text = "Donald Trump",
+                    Detail = "President"
 
                 },
                 new ImageCell()
                 {
-                    ImageSource = "kurtvonnegut.png",
-                    Text = "Kurt Vonnegut",
-                    Detail = "Balling signature holder"
+                    ImageSource = "gavinbelson.png",
+                    Text = "Gavin Belson",
+                    Detail = "Visionary behind 'The box 3'"
+                },
+                new ImageCell()
+                {
+                    ImageSource = "waltdisney.png",
+                    Text = "Walt Disney",
+                    Detail = "Interesting"
                 }
             };
         }

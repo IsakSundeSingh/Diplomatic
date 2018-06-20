@@ -2,20 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Diplomatic.ViewModels"
-             x:Class="Diplomatic.Views.Signatures">
+             x:Class="Diplomatic.Views.Signatures"
+             Title="Signatures">
+    <ContentPage.BindingContext>
+        <local:SignaturePickerViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Label Text="Choose a signature"
+                       HorizontalOptions="Center"/>
                 <!-- Display list of signatures -->
-                <ListView ItemsSource="{Binding SignatureItems}" HasUnevenRows="True">
+                <ListView ItemsSource="{Binding SignatureItems}" HeightRequest="350" RowHeight="40" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell Text="{Binding Text}" Detail="{Binding Detail}" ImageSource="{Binding ImageSource}" />
+                            <ImageCell 
+                                Text="{Binding Text}" 
+                                Detail="{Binding Detail}" 
+                                ImageSource="{Binding ImageSource}"
+                            />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <!-- Button to continue -->
-                <Button Text="Next" HorizontalOptions="Center" />
+                <!-- Button to continue 
+                Clicked="NextPage"
+                -->
+                <Button Text="Next"
+                    Style="{StaticResource nextPageButton}"
+                    WidthRequest="50"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

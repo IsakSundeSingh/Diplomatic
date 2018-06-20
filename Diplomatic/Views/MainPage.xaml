@@ -2,16 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Diplomatic.ViewModels"
-             x:Class="Diplomatic.MainPage">
-        <StackLayout>
+             x:Class="Diplomatic.Views.MainPage">
+        <StackLayout Padding="0,20,0,0">
 
             <Label Text="Welcome to Diplomatic"
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
             
             <Button Text="Generate your own diploma!"
-                    HorizontalOptions="Center"
-                    BackgroundColor="Green"
-                    TextColor="White"/>
+                    Clicked="NextPage"
+                    Style="{StaticResource nextPageButton}"
+                    WidthRequest="250"/>
         </StackLayout>
 </ContentPage>
