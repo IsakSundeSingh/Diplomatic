@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Diplomatic.ViewModels"
+             x:Class="Diplomatic.Views.Signatures">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <!-- Display list of signatures -->
+                <ListView ItemsSource="{Binding SignatureItems}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Text}" Detail="{Binding Detail}" ImageSource="{Binding ImageSource}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!-- Button to continue -->
+                <Button Text="Next" HorizontalOptions="Center" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
