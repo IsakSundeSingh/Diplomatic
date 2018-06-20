@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\Interfaces\IField.cs" />
     <Compile Include="Classes\PDFGenerator.cs" />
     <Compile Include="Services\Interfaces\IDiploma.cs" />
     <Compile Include="Services\Interfaces\IDiplomaGenerator.cs" />
