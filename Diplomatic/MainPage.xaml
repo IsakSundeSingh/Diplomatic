@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Diplomatic"
@@ -12,28 +12,15 @@
             <Entry Placeholder="{Binding NameLabel}" Text="{Binding Name}"/>
             <DatePicker Date="{Binding Date}" MaximumDate="{Binding MaxDate}"/>
 
-            <ListView ItemsSource="{Binding ListItems}" HasUnevenRows="True">
+            <ListView ItemsSource="{Binding SignatureItems}" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout BackgroundColor="#eee" Orientation="Vertical">
-                                <Grid >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70*"/>
-                                        <ColumnDefinition Width="30*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <ImageCell ImageSource="{Binding Image}" Grid.Column="0" Aspect="AspectFill" Scale="0.3" />
-                                    <Label Text="{Binding Celeb}" Grid.Column="1"/>
-
-                                </Grid>
-
-                            </StackLayout>
-                        </ViewCell>
+                        <ImageCell Text="{Binding Text}" Detail="{Binding Detail}" ImageSource="{Binding ImageSource}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Button Text="{Binding Label}"
+            <Button Text="Next"
                 HorizontalOptions="Center"/>
         </StackLayout>
     </ScrollView>

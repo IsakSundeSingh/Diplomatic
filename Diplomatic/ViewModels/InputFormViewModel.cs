@@ -7,30 +7,33 @@ namespace Diplomatic
 {
     public class InputFormViewModel
     {
-        public string Label { get; set; } = "Delete bin and restart.";
+        // Form entries are placed within these attributes
         public string Name { get; set; }
         public DateTime Date { get; set; } = DateTime.UtcNow;
         public DateTime MaxDate { get; set; } = DateTime.UtcNow;
-        //To be gotten from field name
+
+        // To be gotten from field name
         public string NameLabel { get; set; } = "Name";
 
-        public ListItem[] ListItems { get; set; }
+        //List of signature items to be displayed.
+        public ImageCell[] SignatureItems { get; set; }
 
         public InputFormViewModel()
         {
-            ListItems = new ListItem[]
+            SignatureItems = new ImageCell[]
             {
-                new ListItem()
+                //Creating a few signatures for testing purposes
+                new ImageCell()
                 {
-                    Imgsrc = "johnhancock.png",
-                    Name = "John Hancock",
+                    ImageSource = "johnhancock.png",
+                    Text = "John Hancock",
                     Detail = ""
 
                 },
-                new ListItem()
+                new ImageCell()
                 {
-                    Imgsrc = "kurtvonnegut.png",
-                    Name = "Kurt Vonnegut",
+                    ImageSource = "kurtvonnegut.png",
+                    Text = "Kurt Vonnegut",
                     Detail = "Balling signature holder"
                 }
             };
