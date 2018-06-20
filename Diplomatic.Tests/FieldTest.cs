@@ -11,13 +11,13 @@ namespace Diplomatic.Tests
 
         public FieldTest()
         {
-            subject = new Field("Test field", 10, 10, 20, 100);
+            subject = new Field("Test field", 1, 2, 3, 4);
             serialized = @"{
                 ""Name"":""Test field"",
-                ""XOffset"":10,
-                ""YOffset"":10,
-                ""Height"":20,
-                ""Width"":100
+                ""XOffset"":1,
+                ""YOffset"":2,
+                ""Height"":3,
+                ""Width"":4
             }";
         }
 
@@ -51,6 +51,16 @@ namespace Diplomatic.Tests
         {
             subject.Value = "test";
             Assert.True(subject.IsValid);
+        }
+
+        [Fact]
+        public void DestructuresWithTupleAssignment()
+        {
+            (var x, var y, var w, var h) = subject;
+            Assert.Equal(1, x);
+            Assert.Equal(2, y);
+            Assert.Equal(3, w);
+            Assert.Equal(4, h);
         }
     }
 }
