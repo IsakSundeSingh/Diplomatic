@@ -76,7 +76,6 @@
   <ItemGroup>
     <Compile Include="FieldTest.cs" />
     <Compile Include="TemplateTest.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
