@@ -1,5 +1,5 @@
 ---
-name: "Feature request :sparkles:"
+name: Feature request
 about: What if it could do this!
 
 ---
