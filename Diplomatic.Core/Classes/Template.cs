@@ -1,22 +1,42 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace Diplomatic.Core
 {
     [Serializable]
     public class Template
     {
-        public string FilePath;
         public string TemplateName;
-        public IEnumerable<Field> Fields { get; private set; }
-        [JsonIgnore]
-        public bool IsValid => Fields.All(f => f.IsValid);
+        [JsonConverter(typeof(ConcreteCollectionTypeConverter<List<IField>, Field, IField>))]
+        public IEnumerable<IField> Fields { get; set; }
 
-        public Template(string path, string name, IEnumerable<Field> fields)
+        [JsonIgnore]
+        public ITemplateStream RawTemplate;
+        [JsonIgnore]
+        public Stream Stream => RawTemplate.Stream;
+        [JsonIgnore]
+        public bool IsValid
         {
-            FilePath = path;
+            get
+            {
+                bool hasFields = Fields.AsQueryable().Any();
+                bool allFieldsValid = Fields.All(f => f.IsValid);
+                return hasFields &&
+                       allFieldsValid &&
+                       RawTemplate.IsValid;
+            }
+        }
+
+        public Template(ITemplateStream rawTemplate)
+        {
+            RawTemplate = rawTemplate;
+        }
+
+        public Template(string name, ITemplateStream rawTemplate, IEnumerable<IField> fields) : this(rawTemplate)
+        {
             TemplateName = name;
             Fields = fields;
         }
