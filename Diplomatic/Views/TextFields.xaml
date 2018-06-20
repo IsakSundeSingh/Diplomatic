@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Diplomatic.ViewModels"
+             x:Class="Diplomatic.Views.TextFields">
+    <ContentPage.BindingContext>
+        <local:TextFieldViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <!-- Sample fields -->
+        <!-- TODO: These should be dynamic from the amount/type of fields found in the template -->
+        <Entry Placeholder="{Binding NameLabel}" Text="{Binding Name}" />
+        <DatePicker Date="{Binding Date}" MaximumDate="{Binding MaxDate}" />
+    </ContentPage.Content>
+</ContentPage>

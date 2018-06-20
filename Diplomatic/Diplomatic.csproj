@@ -11,4 +11,11 @@
   <ItemGroup>
     <Folder Include="Views\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\MyPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\MyPage.xaml.cs" />
+    <Compile Remove="Views\TextFields.cs" />
+  </ItemGroup>
 </Project>
