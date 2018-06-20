@@ -3,13 +3,14 @@
 </p>
 <hr>
 
-### *A simple app service that creates neat diplomas with custom credentials :black_nib:* 
+### *A multi-platform application for quickly creating and awarding diplomas* :black_nib: 
 
 ## Features
 * :heavy_check_mark: Cool design
-* :x: Anything working at all
 * :heavy_check_mark: Great developers :muscle:
-* :heavy_check_mark: [Vebjørn](https://github.com/vebjornhaugland) :heart_eyes:
+* :x: [Vebjørn](https://github.com/vebjornhaugland) :heart_eyes:
+* :x: Anything working at all
+
 
 
 ## Getting started
