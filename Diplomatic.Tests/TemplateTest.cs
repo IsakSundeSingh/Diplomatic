@@ -1,6 +1,8 @@
 ﻿using Diplomatic.Core;
 using Moq;
+using Newtonsoft.Json;
 using System.IO;
+using System.Linq;
 using Xunit;
 
 namespace Diplomatic.Tests
@@ -46,6 +48,29 @@ namespace Diplomatic.Tests
             Template subject = new Template("Test template", badStream, ValidFields);
 
             Assert.False(subject.IsValid);
+        }
+
+        [Fact]
+        public void DeserializesFromJSON()
+        {
+            var serialized = @"{
+                ""FilePath"":""testFile.pdf"",
+                ""TemplateName"":""Diploma"",
+                ""Fields"":[]}";
+            var subject = JsonConvert.DeserializeObject<Template>(serialized, new TemplateConverter());
+            Assert.Equal("Diploma", subject.TemplateName);
+            Assert.IsAssignableFrom<ITemplateStream>(subject.RawTemplate);
+            Assert.Empty(subject.Fields.ToArray());
+        }
+
+        [Fact]
+        public void SerializesToJSON()
+        {
+            var subject = new Template("Serializes", ValidStream, new Field[] { });
+
+            var json = JsonConvert.SerializeObject(subject);
+
+            Assert.Equal(@"{""TemplateName"":""Serializes"",""Fields"":[]}", json);
         }
     }
 }
