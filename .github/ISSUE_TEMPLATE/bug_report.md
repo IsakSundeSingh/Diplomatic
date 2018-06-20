@@ -1,5 +1,5 @@
 ---
-name: "Bug report :bug:"
+name: Bug report
 about: I found a bug!
 
 ---
