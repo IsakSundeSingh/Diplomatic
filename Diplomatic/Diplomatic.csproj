@@ -34,4 +34,7 @@
     <Compile Remove="Views\MyPage.xaml.cs" />
     <Compile Remove="Views\TextFields.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Diplomatic.Core\Diplomatic.Core.csproj" />
+  </ItemGroup>
 </Project>
