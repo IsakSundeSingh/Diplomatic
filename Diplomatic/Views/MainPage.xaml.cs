@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 
 namespace Diplomatic.Views
@@ -16,5 +16,11 @@ namespace Diplomatic.Views
             // We do not need to submit any info to the page here yet
             await Navigation.PushAsync(next);
         }
-	}
+
+        void OnShow ( object sender, EventArgs e)
+        {
+            InfoLabel.IsVisible = !InfoLabel.IsVisible;
+        }
+
+    }
 }
