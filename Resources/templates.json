@@ -3,44 +3,44 @@
         "TemplateName": "Employee",
         "Fields": [{
             "Name": "name",
-            "XOffset": 146,
-            "YOffset": 174,
-            "Height": 72,
-            "Width": 500
+            "XOffset": 0.25,
+            "YOffset": 0.25,
+            "Height": 0.15,
+            "Width": 0.5
         }, {
             "Name": "date",
-            "XOffset": 96,
-            "YOffset": 445,
-            "Height": 30,
-            "Width": 272
+            "XOffset": 0.12,
+            "YOffset": 0.72,
+            "Height": 0.06,
+            "Width": 0.34
         }, {
             "Name": "boss",
-            "XOffset": 426,
-            "YOffset": 445,
-            "Height": 30,
-            "Width": 272
+            "XOffset": 0.54,
+            "YOffset": 0.72,
+            "Height": 0.06,
+            "Width": 0.34
         }]
     }, {
         "FilePath": "student.pdf",
         "TemplateName": "Student",
         "Fields": [{
             "Name": "name",
-            "XOffset": 10,
-            "YOffset": 10,
-            "Height": 20,
-            "Width": 300
+            "XOffset": 0.25,
+            "YOffset": 0.33,
+            "Height": 0.15,
+            "Width": 0.5
         }, {
-            "Name": "date",
-            "XOffset": 10,
-            "YOffset": 40,
-            "Height": 20,
-            "Width": 300
+            "Name": "helped with",
+            "XOffset": 0.71,
+            "YOffset": 0.59,
+            "Height": 0.05,
+            "Width": 0.125
         }, {
             "Name": "teacher name",
-            "XOffset": 10,
-            "YOffset": 40,
-            "Height": 20,
-            "Width": 300
+            "XOffset": 0.33,
+            "YOffset": 0.8,
+            "Height": 0.075,
+            "Width": 0.33
         }]
     },
     {
@@ -48,10 +48,10 @@
         "TemplateName": "Good effort",
         "Fields": [{
             "Name": "name",
-            "XOffset": 10,
-            "YOffset": 10,
-            "Height": 20,
-            "Width": 300
+            "XOffset": 0.45,
+            "YOffset": 0.4,
+            "Height": 0.2,
+            "Width": 0.4
         }]
     }
 ]

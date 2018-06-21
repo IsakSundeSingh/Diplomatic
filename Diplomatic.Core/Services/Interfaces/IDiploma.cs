@@ -1,8 +1,4 @@
-﻿using PdfSharp;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
-
-namespace Diplomatic.Core
+﻿namespace Diplomatic.Core
 {
     public interface IDiploma
     {
