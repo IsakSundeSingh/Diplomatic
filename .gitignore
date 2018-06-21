@@ -27,7 +27,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-[Aa]rtifacts/
+[Bb]uild/
 tools/*
 
 # Visual Studio 2015 cache/options directory

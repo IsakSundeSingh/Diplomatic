@@ -18,7 +18,7 @@ var solutionFile = GetFiles("./*.sln").First();
 var testsDllPath = string.Format("./Diplomatic.Tests/bin/{0}/*.Tests.dll", configuration);
 
 // Output folders
-var artifactsDirectory = Directory("./Artifacts");
+var artifactsDirectory = Directory("./build");
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -45,9 +45,8 @@ Task("Build-All")
 	.Does(() => 
 	{
 		MSBuild (solutionFile, settings => settings
-            .SetConfiguration("Debug")
-            .SetVerbosity(Verbosity.Minimal)
-            .WithProperty("TreatWarningsAsErrors", "true"));
+            .SetConfiguration("Release")
+            .SetVerbosity(Verbosity.Minimal));
 	});
 
 
