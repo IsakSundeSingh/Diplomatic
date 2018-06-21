@@ -45,14 +45,13 @@ Task("Build-All")
 	.Does(() => 
 	{
 		MSBuild (solutionFile, settings => settings
-            .SetConfiguration("Release")
+            .SetConfiguration("Debug")
             .SetVerbosity(Verbosity.Minimal)
             .WithProperty("TreatWarningsAsErrors", "true"));
 	});
 
 
 Task("Run-Tests")
-	.IsDependentOn("Prepare-Build")
 	.Does(() =>
 	{		
 		XUnit2(testsDllPath, new XUnit2Settings {
