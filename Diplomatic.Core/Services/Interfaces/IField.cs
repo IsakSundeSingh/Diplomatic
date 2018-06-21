@@ -6,6 +6,6 @@
         string Name { get; }
         string Value { get; set; }
 
-        void Deconstruct(out int x, out int y, out int w, out int h);
+        void Deconstruct(out double x, out double y, out double h, out double w);
     }
 }

@@ -12,15 +12,15 @@ namespace Diplomatic.Core
         [JsonIgnore]
         public bool IsValid => !string.IsNullOrWhiteSpace(Value);
         [JsonProperty]
-        private readonly int XOffset;
+        private readonly double XOffset;
         [JsonProperty]
-        private readonly int YOffset;
+        private readonly double YOffset;
         [JsonProperty]
-        private readonly int Height;
+        private readonly double Height;
         [JsonProperty]
-        private readonly int Width;
+        private readonly double Width;
 
-        public Field(string name, int x, int y, int w, int h)
+        public Field(string name, double x, double y, double h, double w)
         {
             Name = name;
             Value = "";
@@ -30,7 +30,7 @@ namespace Diplomatic.Core
             Width = w;
         }
 
-        public void Deconstruct(out int x, out int y, out int w, out int h)
+        public void Deconstruct(out double x, out double y, out double h, out double w)
         {
             x = XOffset;
             y = YOffset;
