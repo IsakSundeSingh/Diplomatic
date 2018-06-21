@@ -20,5 +20,21 @@ This project is based on the new .NET Standard (v2.0), which is a set of APIs th
 * Visual Studio 2017 v15.3+
 * VS2017 Tools for Xamarin
 
+#### Building Diplomatic
+
+For building the project use the CAKE bootstrappers included in the project,
+these scripts builds every project in the solution and runs the Unit tests.
+
+For cleaning the project:
+``` cmd
+  $  .\build.ps1 -Target Clean
+```
+
+For building and running Unit Tests:
+``` cmd
+  $  .\build.ps1 
+```
+
+
 ### Links
 * [Diplomatic](https://github.com/Dualog-students/Diplomatic)
