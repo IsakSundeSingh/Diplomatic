@@ -4,16 +4,30 @@
              xmlns:local="clr-namespace:Diplomatic.ViewModels"
              x:Class="Diplomatic.Views.MainPage">
         <StackLayout Padding="0,20,0,0">
+            <!-- Add title to mainpage? Leave blank?-->
 
+            <!-- Text above logo image -->
             <Label Text="Welcome to"
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
+            <!-- Displays image of the Diplomatic logo at the center of the page -->
+            <Image Source="diplomatic.png" Aspect="AspectFit" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="OnShow"/>
+                </Image.GestureRecognizers>
+            </Image>
 
-        <Image Source="diplomatic.png" Aspect="AspectFit"/>
+        <Label x:Name="InfoLabel"
+               Text="Find us at: https://github.com/Dualog-students/Diplomatic"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               IsVisible="False"/>
 
-        <Button Text="Generate your own diploma!"
-                    Clicked="NextPage"
-                    Style="{StaticResource nextPageButton}"
-                    WidthRequest="250"/>
+        <!-- Button to navigate to template page -->
+            <Button Text="Generate your own diploma!"
+                        Clicked="NextPage"
+                        Style="{StaticResource nextPageButton}"
+                        WidthRequest="250"/>
         </StackLayout>
 </ContentPage>
