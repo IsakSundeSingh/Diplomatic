@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic", "Diplomatic\Diplomatic.csproj", "{CDB8B215-5C59-4F03-A016-E3C7A8DEABCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diplomatic", "Diplomatic\Diplomatic.csproj", "{CDB8B215-5C59-4F03-A016-E3C7A8DEABCC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.Android", "Diplomatic.Android\Diplomatic.Android.csproj", "{86FD3DB4-B1E4-4FDF-9442-01A9ADC6FAB7}"
 EndProject
@@ -24,6 +24,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.Tests", "Diplomatic.Tests\Diplomatic.Tests.csproj", "{A9334B6C-C495-497C-87D0-23D2DADF3414}"
 	ProjectSection(ProjectDependencies) = postProject
 		{81224382-7B18-441F-9C7E-CC7CEBD114D7} = {81224382-7B18-441F-9C7E-CC7CEBD114D7}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{686AB511-C479-4B86-95B3-BFADA268F7D9}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
