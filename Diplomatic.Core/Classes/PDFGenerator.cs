@@ -1,5 +1,5 @@
-﻿using PdfSharp.Drawing;
-using PdfSharp.Pdf;
+﻿using Didstopia.PDFSharp.Drawing;
+using Didstopia.PDFSharp.Pdf;
 using System.Drawing;
 
 namespace Diplomatic.Core
@@ -22,24 +22,24 @@ namespace Diplomatic.Core
     {
         public IDiploma Generate(Template template)
         {
-            PdfDocument document = new PdfDocument();
+            var document = new PdfDocument();
             document.Info.Title = template.TemplateName;
             document.Info.Author = "Diplomatic © 2018";
             document.PageLayout = PdfPageLayout.SinglePage;
 
-            XPdfForm originalPdf = XPdfForm.FromStream(template.Stream);
+            var originalPdf = XPdfForm.FromStream(template.Stream);
 
-            PdfPage page = document.AddPage();
+            var page = document.AddPage();
             page.Height = originalPdf.PixelHeight;
             page.Width = originalPdf.PixelWidth;
 
-            XGraphics gfx = XGraphics.FromPdfPage(page);
+            var gfx = XGraphics.FromPdfPage(page);
 
             gfx.DrawImage(originalPdf, new XRect(0, 0, page.Width, page.Height));
 
             foreach (var field in template.Fields)
             {
-                (double xOffset, double yOffset, double height, double width) = field;
+                (var xOffset, var yOffset, var height, var width) = field;
                 var x = (int)(xOffset * page.Width);
                 var y = (int)(yOffset * page.Height);
                 var h = (int)(height * page.Height);
@@ -48,8 +48,8 @@ namespace Diplomatic.Core
                 var fontName = "Comic Sans MS";
                 var fontColor = "Black";
                 var fontSize = (int)(h * 0.8);
-                XFont font = new XFont(fontName, fontSize, XFontStyle.Bold);
-                XSolidBrush brush = new XSolidBrush(XColor.FromArgb(Color.FromName(fontColor)));
+                var font = new XFont(fontName, fontSize, XFontStyle.Bold);
+                var brush = new XSolidBrush(XColor.FromArgb(0));
                 var boundingBox = new XRect(x, y, w, h);
                 gfx.DrawString(field.Value, font, brush, boundingBox, XStringFormats.BottomCenter);
             }
