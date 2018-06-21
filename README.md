@@ -11,8 +11,6 @@
 * :x: [Vebjørn](https://github.com/vebjornhaugland) :heart_eyes:
 * :x: Anything working at all
 
-
-
 ## Getting started
 This project is based on the new .NET Standard (v2.0), which is a set of APIs that all .NET platforms have to implement, it is currently supported by the .NET Framework, .NET Core and Xamarin for .NET Core.
 
