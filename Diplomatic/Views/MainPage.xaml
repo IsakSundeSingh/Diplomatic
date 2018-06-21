@@ -19,10 +19,24 @@
             </Image>
 
         <Label x:Name="InfoLabel"
-               Text="Find us at: https://github.com/Dualog-students/Diplomatic"
+               Text="Check us out at:"
                VerticalOptions="Center"
                HorizontalOptions="Center"
                IsVisible="False"/>
+        <Label x:Name="LinkLabel"
+               Text="Github"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               IsVisible="False"
+               TextColor="Blue">
+            
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="OnLink"/>
+            </Label.GestureRecognizers>
+            
+        </Label>
+
 
         <!-- Button to navigate to template page -->
             <Button Text="Generate your own diploma!"
