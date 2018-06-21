@@ -3,7 +3,7 @@
 </p>
 <hr>
 
-### *A multi-platform application for quickly creating and awarding diplomas* :black_nib: 
+### *A cross-platform application for quickly creating and awarding diplomas* :black_nib: 
 
 ## Features
 * :heavy_check_mark: Cool design
