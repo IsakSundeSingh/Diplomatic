@@ -5,11 +5,13 @@
              x:Class="Diplomatic.Views.MainPage">
         <StackLayout Padding="0,20,0,0">
 
-            <Label Text="Welcome to Diplomatic"
+            <Label Text="Welcome to"
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
-            
-            <Button Text="Generate your own diploma!"
+
+        <Image Source="diplomatic.png" Aspect="AspectFit"/>
+
+        <Button Text="Generate your own diploma!"
                     Clicked="NextPage"
                     Style="{StaticResource nextPageButton}"
                     WidthRequest="250"/>
