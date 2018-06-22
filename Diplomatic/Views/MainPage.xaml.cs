@@ -1,6 +1,6 @@
 using System;
 using Xamarin.Forms;
-
+using Diplomatic.ViewModels;
 namespace Diplomatic.Views
 {
     public partial class MainPage : ContentPage
@@ -13,6 +13,7 @@ namespace Diplomatic.Views
         async void NextPage (object sender, EventArgs e)
         {
             var next = new Templates();
+            next.BindingContext = new TemplatePickerViewModel();
             // We do not need to submit any info to the page here yet
             await Navigation.PushAsync(next);
         }
