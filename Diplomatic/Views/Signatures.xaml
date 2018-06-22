@@ -28,8 +28,7 @@
                 Clicked="NextPage"
                 -->
                 <Button Text="Next"
-                    Style="{StaticResource nextPageButton}"
-                    WidthRequest="50"/>
+                    Style="{StaticResource nextPageButton}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
