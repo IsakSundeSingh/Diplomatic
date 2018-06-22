@@ -9,7 +9,7 @@ namespace Diplomatic.Core
     [Serializable]
     public class Template
     {
-        public string TemplateName;
+        public string TemplateName { get; set; }
         [JsonConverter(typeof(ConcreteCollectionTypeConverter<List<IField>, Field, IField>))]
         public IEnumerable<IField> Fields { get; set; }
 
