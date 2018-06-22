@@ -1,4 +1,4 @@
-﻿namespace Diplomatic.Core
+namespace Diplomatic.Core
 {
     public interface IField
     {
@@ -6,6 +6,6 @@
         string Name { get; }
         string Value { get; set; }
 
-        void Deconstruct(out double x, out double y, out double h, out double w);
+        void Deconstruct(out double x, out double y, out double w, out double h);
     }
 }

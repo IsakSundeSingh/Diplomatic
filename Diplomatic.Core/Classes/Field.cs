@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 
 namespace Diplomatic.Core
@@ -11,31 +11,31 @@ namespace Diplomatic.Core
         public string Value { get; set; }
         [JsonIgnore]
         public bool IsValid => !string.IsNullOrWhiteSpace(Value);
-        [JsonProperty]
-        private readonly double XOffset;
-        [JsonProperty]
-        private readonly double YOffset;
-        [JsonProperty]
-        private readonly double Height;
-        [JsonProperty]
-        private readonly double Width;
+        [JsonProperty("XOffset")]
+        readonly double xOffset;
+        [JsonProperty("YOffset")]
+        readonly double yOffset;
+        [JsonProperty("Width")]
+        readonly double width;
+        [JsonProperty("Height")]
+        readonly double height;
 
-        public Field(string name, double x, double y, double h, double w)
+        public Field(string name, double x, double y, double w, double h)
         {
             Name = name;
             Value = "";
-            XOffset = x;
-            YOffset = y;
-            Height = h;
-            Width = w;
+            xOffset = x;
+            yOffset = y;
+            width = w;
+            height = h;
         }
 
-        public void Deconstruct(out double x, out double y, out double h, out double w)
+        public void Deconstruct(out double x, out double y, out double w, out double h)
         {
-            x = XOffset;
-            y = YOffset;
-            h = Height;
-            w = Width;
+            x = xOffset;
+            y = yOffset;
+            w = width;
+            h = height;
         }
     }
 }

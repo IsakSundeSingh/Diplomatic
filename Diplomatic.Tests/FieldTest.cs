@@ -1,4 +1,4 @@
-﻿using Diplomatic.Core;
+using Diplomatic.Core;
 using Newtonsoft.Json;
 using Xunit;
 
