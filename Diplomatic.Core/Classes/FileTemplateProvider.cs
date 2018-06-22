@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,23 +8,19 @@ namespace Diplomatic.Core
 {
     public class FileTemplateProvider : ITemplateProvider
     {
-        private readonly List<Template> templates;
+        readonly List<Template> templates;
+        public IEnumerable<Template> GetTemplates() => templates.Select(t => t);
 
         public FileTemplateProvider(string path)
         {
             if (!File.Exists(path))
-                throw new ArgumentException("File not found.", nameof(path));
+                throw new ArgumentException($"File not found: {path}", nameof(path));
 
-            using (StreamReader r = new StreamReader(path))
+            using (var r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();
                 templates = JsonConvert.DeserializeObject<List<Template>>(json, new TemplateConverter());
             }
-        }
-
-        public IEnumerable<Template> GetTemplates()
-        {
-            return templates.Select(t => t);
         }
     }
 }

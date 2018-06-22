@@ -1,4 +1,4 @@
-﻿namespace Diplomatic.Core
+namespace Diplomatic.Core
 {
     interface IDiplomaGenerator
     {

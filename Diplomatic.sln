@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.UITests", "Diplo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.Tests", "Diplomatic.Tests\Diplomatic.Tests.csproj", "{A9334B6C-C495-497C-87D0-23D2DADF3414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplomatic.Core", "Diplomatic.Core\Diplomatic.Core.csproj", "{2E27E94F-BF09-40DB-B624-5447A96204B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diplomatic.Core", "Diplomatic.Core\Diplomatic.Core.csproj", "{2E27E94F-BF09-40DB-B624-5447A96204B6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{686AB511-C479-4B86-95B3-BFADA268F7D9}"
 	ProjectSection(SolutionItems) = preProject
