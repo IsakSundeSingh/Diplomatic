@@ -6,11 +6,17 @@
 
   <ItemGroup>
     <None Remove="Assets\Images\gavinbelson.png" />
+    <None Remove="Assets\Images\test.png" />
+    <None Remove="Assets\templates.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Images\gavinbelson.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Images\test.png" />
+    <EmbeddedResource Include="Assets\templates.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
