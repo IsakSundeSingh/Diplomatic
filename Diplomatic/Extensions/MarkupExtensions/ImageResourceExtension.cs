@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Diplomatic.Extensions.Markup
 {
+    using Diplomatic.Utils;
 
     [ContentProperty("Source")]
     public class ImageResourceExtension : IMarkupExtension
@@ -17,8 +18,10 @@ namespace Diplomatic.Extensions.Markup
                 return null;
             }
 
-            var imageSource = ImageSource.FromResource($"{nameof(Diplomatic)}.Assets.Images.{Source}");
-            return imageSource;
+            var loader = new ResourceLoader();
+            ImageSource image = loader.LoadImage(Source);
+            
+            return image;
         }
     }
 }
