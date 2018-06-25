@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:Diplomatic.ViewModels"
              xmlns:extensions="clr-namespace:Diplomatic.Extensions.Markup;assembly=Diplomatic"
              x:Class="Diplomatic.Views.MainPage">
-        <StackLayout Padding="0,20,0,0">
+        <Grid Padding="0,20,0,0" BackgroundColor="{StaticResource backgroundColor}">
             <!-- Add title to mainpage? Leave blank?-->
-
+            <StackLayout>
             <!-- Text above logo image -->
             <Label Text="Welcome to"
                    VerticalOptions="Center"
@@ -38,11 +38,11 @@
             
         </Label>
 
-
+        </StackLayout>
         <!-- Button to navigate to template page -->
             <Button Text="Generate your own diploma!"
                         Clicked="NextPage"
                         Style="{StaticResource nextPageButton}"
                         WidthRequest="250"/>
-        </StackLayout>
+        </Grid>
 </ContentPage>
