@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Diplomatic.ViewModels"
+             xmlns:extensions="clr-namespace:Diplomatic.Extensions.Markup;assembly=Diplomatic"
              x:Class="Diplomatic.Views.MainPage">
         <StackLayout Padding="0,20,0,0">
             <!-- Add title to mainpage? Leave blank?-->
@@ -11,7 +12,7 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
             <!-- Displays image of the Diplomatic logo at the center of the page -->
-            <Image Source="diplomatic.png" Aspect="AspectFit" >
+            <Image Source="{extensions:ImageResource diplomatic.png}" Aspect="AspectFit" >
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer 
                         Tapped="OnShow"/>
