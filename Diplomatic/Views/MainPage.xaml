@@ -20,10 +20,13 @@
             </Image>
 
         <Label x:Name="InfoLabel"
-               Text="Check us out at:"
+               Text="Check us out on:"
                VerticalOptions="Center"
                HorizontalOptions="Center"
-               IsVisible="False"/>
+               IsVisible="False"
+               FontAttributes="Bold"
+               FontSize="Large"/>
+            
         <Label x:Name="LinkLabel"
                Text="Github"
                VerticalOptions="Center"
