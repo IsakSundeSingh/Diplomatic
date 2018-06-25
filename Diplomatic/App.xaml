@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Diplomatic.App">
 	<Application.Resources>
+        <Color x:Key="backgroundColor">#e5f4f2</Color>
         <Style x:Key="nextPageButton" TargetType="Button">
             <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="End"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="BackgroundColor" Value="Green"/>
             <Setter Property="TextColor" Value="White"/>
         </Style>
