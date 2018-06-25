@@ -12,7 +12,7 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
             <!-- Displays image of the Diplomatic logo at the center of the page -->
-            <Image Source="{extensions:ImageResource diplomatic.png}" Aspect="AspectFit" >
+            <Image Source="{extensions:ImageResource logo.png}" Aspect="AspectFit" >
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer 
                         Tapped="OnShow"/>
