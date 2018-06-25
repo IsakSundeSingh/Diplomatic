@@ -4,6 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\templates.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -20,6 +23,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\TextFields.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Diplomatic.Core\Diplomatic.Core.csproj" />
