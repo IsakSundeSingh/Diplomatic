@@ -3,20 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <None Remove="Assets\Images\gavinbelson.png" />
-    <None Remove="Assets\Images\test.png" />
-    <None Remove="Assets\templates.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Assets\Images\gavinbelson.png">
+    <EmbeddedResource Include="Assets\templates.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Assets\Images\test.png" />
-    <EmbeddedResource Include="Assets\templates.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    <EmbeddedResource Include="Assets\Images\diplomatic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Images\gavinbelson.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
