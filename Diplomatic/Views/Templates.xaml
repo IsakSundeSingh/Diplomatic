@@ -4,7 +4,7 @@
              x:Class="Diplomatic.Views.Templates"
              Title="Templates">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="{StaticResource backgroundColor}">
             <Label Text="Choose a template!" HorizontalOptions="Center"/>
             <!-- Insert template logic here-->
             
