@@ -8,6 +8,7 @@ namespace Diplomatic.Views
 {
     public partial class Templates : ContentPage
     {
+
         public Templates()
         {
             InitializeComponent();
