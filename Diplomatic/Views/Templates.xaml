@@ -4,7 +4,7 @@
         <StackLayout>
             <Label Text="Choose a template!" HorizontalOptions="Center" />
             <!-- Insert template logic here-->
-            <ListView ItemsSource="{Binding TemplateList}">
+            <ListView ItemsSource="{Binding TemplateList}" ItemSelected="OnSelection">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -13,7 +13,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Next" Clicked="NextPage" Style="{StaticResource nextPageButton}" WidthRequest="50" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

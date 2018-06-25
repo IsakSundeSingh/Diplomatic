@@ -2,19 +2,19 @@
         "FilePath": "employee.pdf",
         "TemplateName": "Employee",
         "Fields": [{
-            "Name": "name",
+            "Name": "Name",
             "XOffset": 0.25,
             "YOffset": 0.25,
             "Height": 0.15,
             "Width": 0.5
         }, {
-            "Name": "date",
+            "Name": "Date",
             "XOffset": 0.12,
             "YOffset": 0.72,
             "Height": 0.06,
             "Width": 0.34
         }, {
-            "Name": "boss",
+            "Name": "Boss",
             "XOffset": 0.54,
             "YOffset": 0.72,
             "Height": 0.06,
@@ -24,19 +24,19 @@
         "FilePath": "student.pdf",
         "TemplateName": "Student",
         "Fields": [{
-            "Name": "name",
+            "Name": "Name",
             "XOffset": 0.25,
             "YOffset": 0.33,
             "Height": 0.15,
             "Width": 0.5
         }, {
-            "Name": "helped with",
+            "Name": "Helped with",
             "XOffset": 0.71,
             "YOffset": 0.59,
             "Height": 0.05,
             "Width": 0.125
         }, {
-            "Name": "teacher name",
+            "Name": "Teacher name",
             "XOffset": 0.33,
             "YOffset": 0.8,
             "Height": 0.075,
@@ -47,7 +47,7 @@
         "FilePath": "good_effort.pdf",
         "TemplateName": "Good effort",
         "Fields": [{
-            "Name": "name",
+            "Name": "Name",
             "XOffset": 0.45,
             "YOffset": 0.4,
             "Height": 0.2,

@@ -4,19 +4,21 @@
              xmlns:local="clr-namespace:Diplomatic.ViewModels"
              x:Class="Diplomatic.Views.TextFields"
              Title="Credentials">
-    <ContentPage.BindingContext>
-        <local:TextFieldViewModel />
-    </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <!-- Sample fields -->
-        <!-- TODO: These should be dynamic from the amount/type of fields found in the template -->
         <StackLayout Padding="20,0,20,0" Orientation="Vertical">
             <!-- A little bit of padding from each side is added so the fields aren't as ugly -->
             <Label Text="Submit your credentials" HorizontalOptions="Center"/>
-            <Entry Placeholder="{Binding NameLabel}" Text="{Binding Name}" />
-            <DatePicker Date="{Binding Date}" MaximumDate="{Binding MaxDate}" />
-            
+            <ListView ItemsSource="{Binding SelectedTemplate.Fields}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Entry Placeholder="{Binding Name}" Text="{Binding Value}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <Button Text="Next"
                     Clicked="NextPage"
                     Style="{StaticResource nextPageButton}"
