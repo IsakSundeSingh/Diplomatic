@@ -34,9 +34,14 @@
   <style name="Diplomatic" parent="Diplomatic.Base">
   </style>
 
-  <style name="Diplomatic.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:windowBackground">@drawable/splash_screen</item>
+  <style name="Theme.Splash"
+    parent="android:Theme">
+    <item name="android:windowBackground">
+      @drawable/splash_screen
+    </item>
     <item name="android:windowNoTitle">true</item>
-    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowIsTranslucent">false</item>
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:backgroundDimEnabled">true</item>
   </style>
 </resources>
