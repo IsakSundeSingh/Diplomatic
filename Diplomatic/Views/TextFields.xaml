@@ -14,14 +14,14 @@
                 <ListView.ItemTemplate >
                     <DataTemplate>
                         <ViewCell>
-                        <Grid>
+                        <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                </Grid.RowDefinitions>
-                            <Entry Grid.Column="0" Placeholder="{Binding Name}" Text="{Binding Value}"/>
+                            <Entry Style="{StaticResource margin-fields}" Grid.Column="0" Placeholder="{Binding Name}" Text="{Binding Value}"/>
                         </Grid>
                             </ViewCell>
                     </DataTemplate>
@@ -31,7 +31,7 @@
             <Button Text="Next"
                     Clicked="NextPage"
                     Style="{StaticResource nextPageButton}"
-                    WidthRequest="50"/>
+                    />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
