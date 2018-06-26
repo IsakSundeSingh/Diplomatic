@@ -4,7 +4,7 @@
         <StackLayout Padding="20,0,20,0" BackgroundColor="{StaticResource backgroundColor}">
             <Label Text="Pick a template" HorizontalOptions="Center" />
             <!-- Insert template logic here-->
-            <ListView ItemsSource="{Binding TemplateList}" ItemSelected="OnSelection" SeparatorVisibility="None">
+            <ListView ItemsSource="{Binding TemplateList}" ItemSelected="OnSelection" SeparatorVisibility="None" BackgroundColor="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
