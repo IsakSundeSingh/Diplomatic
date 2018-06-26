@@ -43,7 +43,7 @@
 
         </StackLayout>
         <!-- Button to navigate to template page -->
-            <Button Text="Lets go!"
+            <Button Text="Let's go!"
                         Clicked="NextPage"
                         Style="{StaticResource nextPageButton}"
                         />

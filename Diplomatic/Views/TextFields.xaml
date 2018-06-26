@@ -14,15 +14,7 @@
                 <ListView.ItemTemplate >
                     <DataTemplate>
                         <ViewCell>
-                        <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                               </Grid.RowDefinitions>
                             <Entry Style="{StaticResource margin-fields}" Grid.Column="0" Placeholder="{Binding Name}" Text="{Binding Value}"/>
-                        </Grid>
                             </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
