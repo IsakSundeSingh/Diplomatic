@@ -12,6 +12,7 @@ namespace Diplomatic.Views
         public Templates()
         {
             InitializeComponent();
+                
         }
 
         async void OnSelection(object sender, SelectedItemChangedEventArgs e)
