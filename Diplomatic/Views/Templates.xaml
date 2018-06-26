@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:extensions="clr-namespace:Diplomatic.Extensions.Markup;assembly=Diplomatic" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Diplomatic.Views.Templates" Title="Templates">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource backgroundColor}">
-            <Label Text="Choose a template!" HorizontalOptions="Center"/>
+        <StackLayout Padding="20,0,20,0" BackgroundColor="{StaticResource backgroundColor}">
+            <Label Text="Pick a template" HorizontalOptions="Center" />
             <!-- Insert template logic here-->
             <ListView ItemsSource="{Binding TemplateList}" ItemSelected="OnSelection" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
@@ -11,14 +11,9 @@
                             <Grid ColumnSpacing="5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="2*" />
                                 </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="10" />
-                                </Grid.RowDefinitions>
                                 <!-- This image thing wont work tho-->
-                                <Image Grid.Column="0" Grid.Row="0" Source="{extensions:ImageResource employee.png, Source=RawTemplate}" Aspect="AspectFit" />
-                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding TemplateName}" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding TemplateName}" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
