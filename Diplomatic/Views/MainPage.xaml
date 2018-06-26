@@ -14,7 +14,7 @@
             <!-- Displays image of the Diplomatic logo at the center of the page -->
             <Image Source="{extensions:ImageResource logo.png}" Aspect="AspectFit" >
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer 
+                    <TapGestureRecognizer
                         Tapped="OnShow"/>
                 </Image.GestureRecognizers>
             </Image>
@@ -26,26 +26,26 @@
                IsVisible="False"
                FontAttributes="Bold"
                FontSize="Large"/>
-            
+
         <Label x:Name="LinkLabel"
                Text="Github"
                VerticalOptions="Center"
                HorizontalOptions="Center"
                IsVisible="False"
                TextColor="Blue">
-            
+
             <Label.GestureRecognizers>
                 <TapGestureRecognizer
                     Tapped="OnLink"/>
             </Label.GestureRecognizers>
-            
+
         </Label>
 
         </StackLayout>
         <!-- Button to navigate to template page -->
-            <Button Text="Generate your own diploma!"
+            <Button Text="Lets go!"
                         Clicked="NextPage"
                         Style="{StaticResource nextPageButton}"
-                        WidthRequest="250"/>
+                        />
         </Grid>
 </ContentPage>

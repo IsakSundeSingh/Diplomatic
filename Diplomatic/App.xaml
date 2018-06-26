@@ -4,12 +4,26 @@
              x:Class="Diplomatic.App">
 	<Application.Resources>
         <Color x:Key="backgroundColor">#e5f4f2</Color>
+
         <Style x:Key="nextPageButton" TargetType="Button">
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="VerticalOptions" Value="End"/>
             <Setter Property="Margin" Value="20"/>
             <Setter Property="BackgroundColor" Value="Green"/>
             <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="WidthRequest" Value="75" />
+        </Style>
+
+        <OnPlatform
+            x:Key="EntryMargins"
+            x:TypeArguments="Thickness"
+            Android="0"
+            WinPhone="0"
+            iOS="5" />
+
+        <Style x:Key="margin-fields" TargetType="Entry">
+            <Setter Property="Margin" Value="{StaticResource EntryMargins}"/>
         </Style>
 	</Application.Resources>
 </Application>
