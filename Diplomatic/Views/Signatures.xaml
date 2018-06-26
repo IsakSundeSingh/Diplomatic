@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Diplomatic.ViewModels"
-             x:Class="Diplomatic.Views.Signatures"
-             Title="Signatures">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Diplomatic.ViewModels" x:Class="Diplomatic.Views.Signatures" Title="Signatures">
     <ContentPage.BindingContext>
-        <local:SignaturePickerViewModel/>
+        <local:SignaturePickerViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="{StaticResource backgroundColor}" >
-                <Label Text="Choose a signature"
-                       HorizontalOptions="Center"/>
+            <StackLayout Padding="20,0,20,0" BackgroundColor="{StaticResource backgroundColor}">
+                <Label Text="Pick a signature" HorizontalOptions="Center"/>
                 <!-- Display list of signatures -->
-                <ListView ItemsSource="{Binding SignatureItems}" HeightRequest="350" RowHeight="40" SeparatorVisibility="None">
+                <ListView ItemsSource="{Binding SignatureItems}" BackgroundColor="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell 
-                                Text="{Binding Text}" 
-                                Detail="{Binding Detail}" 
-                                ImageSource="{Binding ImageSource}"
-                            />
+                            <ViewCell>
+                                <Grid ColumnSpacing="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--Image -->
+                                    <Image Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFit" />
+                                    <!-- Text -->
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Text}"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="End" />
+                                </Grid>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <!-- Button to continue 
+                <!-- Button to continue
                 Clicked="NextPage"
                 -->
-                <Button Text="Next"
-                    Style="{StaticResource nextPageButton}"/>
+                <Button Text="Next" Style="{StaticResource nextPageButton}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
