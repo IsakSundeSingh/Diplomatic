@@ -10,12 +10,7 @@
     <EmbeddedResource Include="Assets\templates.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Assets\Images\diplomatic.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Assets\Images\gavinbelson.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Images\employee.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,8 +21,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Images\logo.png" />
+    <None Remove="Assets\Images\employee.png" />
+    <None Remove="Assets\Images\gavinbelson.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Diplomatic.Core\Diplomatic.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Assets\Images\gavinbelson.png" />
   </ItemGroup>
 </Project>

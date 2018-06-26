@@ -10,12 +10,20 @@
         <StackLayout Padding="20,0,20,0" Orientation="Vertical">
             <!-- A little bit of padding from each side is added so the fields aren't as ugly -->
             <Label Text="Submit your credentials" HorizontalOptions="Center"/>
-            <ListView ItemsSource="{Binding SelectedTemplate.Fields}">
-                <ListView.ItemTemplate>
+            <ListView ItemsSource="{Binding SelectedTemplate.Fields}" SeparatorVisibility="None">
+                <ListView.ItemTemplate >
                     <DataTemplate>
                         <ViewCell>
-                            <Entry Placeholder="{Binding Name}" Text="{Binding Value}"/>
-                        </ViewCell>
+                        <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                               </Grid.RowDefinitions>
+                            <Entry Grid.Column="0" Placeholder="{Binding Name}" Text="{Binding Value}"/>
+                        </Grid>
+                            </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

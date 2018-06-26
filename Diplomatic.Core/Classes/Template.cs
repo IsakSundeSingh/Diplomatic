@@ -18,7 +18,7 @@ namespace Diplomatic.Core
         [JsonIgnore]
         public Stream Stream => RawTemplate.Stream;
         [JsonIgnore]
-        public string FilePath => RawTemplate.FilePath;
+        public string TempPath => RawTemplate.FilePath;
         [JsonIgnore]
         public bool IsValid
         {
