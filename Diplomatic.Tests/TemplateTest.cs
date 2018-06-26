@@ -1,4 +1,4 @@
-﻿using Diplomatic.Core;
+using Diplomatic.Core;
 using Moq;
 using Newtonsoft.Json;
 using System.IO;
@@ -9,68 +9,53 @@ namespace Diplomatic.Tests
 {
     public class TemplateTest
     {
-        readonly IField[] ValidFields;
-        readonly ITemplateStream ValidStream;
-        Template subject;
+        private readonly IField[] validFields;
+        private Template subject;
 
         public TemplateTest()
         {
             var mockField = new Mock<IField>();
             mockField.Setup(field => field.IsValid).Returns(true);
-            ValidFields = new IField[] { mockField.Object };
-
-            var mockStream = new Mock<ITemplateStream>();
-            mockStream.Setup(stream => stream.IsValid).Returns(true);
-            ValidStream = mockStream.Object;
+            validFields = new IField[] { mockField.Object };
         }
 
         [Fact]
         public void ValidatesFieldsAreFilled()
         {
-            subject = new Template("Template with filled fields", ValidStream, ValidFields);
+            subject = new Template("Template with filled fields", "name.png", validFields);
             Assert.True(subject.IsValid);
         }
 
         [Fact]
         public void NotValidWithoutFields()
         {
-            Template subject = new Template("Template with no fields", ValidStream, new Field[] { });
-            Assert.False(subject.IsValid);
-        }
-
-        [Fact]
-        public void NotValidWithoutStream()
-        {
-            var mockStream = new Mock<ITemplateStream>();
-            mockStream.Setup(stream => stream.IsValid).Returns(false);
-            var badStream = mockStream.Object;
-
-            Template subject = new Template("Test template", badStream, ValidFields);
-
+            subject = new Template("Template with no fields", "name.png", new Field[] { });
             Assert.False(subject.IsValid);
         }
 
         [Fact]
         public void DeserializesFromJSON()
         {
-            var serialized = @"{
-                ""FilePath"":""testFile.pdf"",
+            string serialized = @"{
+                ""ResourcePath"":""testFile.png"",
                 ""TemplateName"":""Diploma"",
-                ""Fields"":[]}";
-            var subject = JsonConvert.DeserializeObject<Template>(serialized, new TemplateConverter());
+                ""Fields"":[],
+                ""Signature"":null}";
+            Template subject = JsonConvert.DeserializeObject<Template>(serialized);
+            Assert.Equal("testFile.png", subject.ResourcePath);
             Assert.Equal("Diploma", subject.TemplateName);
-            Assert.IsAssignableFrom<ITemplateStream>(subject.RawTemplate);
+            Assert.Null(subject.Signature);
             Assert.Empty(subject.Fields.ToArray());
         }
 
         [Fact]
         public void SerializesToJSON()
         {
-            var subject = new Template("Serializes", ValidStream, new Field[] { });
+            var subject = new Template("Serializes", "file.png", new Field[] { });
 
-            var json = JsonConvert.SerializeObject(subject);
+            string json = JsonConvert.SerializeObject(subject);
 
-            Assert.Equal(@"{""TemplateName"":""Serializes"",""Fields"":[]}", json);
+            Assert.Equal(@"{""TemplateName"":""Serializes"",""ResourcePath"":""file.png"",""Fields"":[],""Signature"":null}", json);
         }
     }
 }

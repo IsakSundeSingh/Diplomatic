@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,13 +10,11 @@ namespace Diplomatic.Core
     public class Template
     {
         public string TemplateName { get; set; }
+        public string ResourcePath { get; set; }
         [JsonConverter(typeof(ConcreteCollectionTypeConverter<List<IField>, Field, IField>))]
         public IEnumerable<IField> Fields { get; set; }
+        public Field Signature { get; set; }
 
-        [JsonIgnore]
-        public ITemplateStream RawTemplate;
-        [JsonIgnore]
-        public Stream Stream => RawTemplate.Stream;
         [JsonIgnore]
         public bool IsValid
         {
@@ -24,21 +22,22 @@ namespace Diplomatic.Core
             {
                 bool hasFields = Fields.AsQueryable().Any();
                 bool allFieldsValid = Fields.All(f => f.IsValid);
-                return hasFields &&
-                       allFieldsValid &&
-                       RawTemplate.IsValid;
+                return hasFields && allFieldsValid;
             }
         }
 
-        public Template(ITemplateStream rawTemplate)
-        {
-            RawTemplate = rawTemplate;
-        }
-
-        public Template(string name, ITemplateStream rawTemplate, IEnumerable<IField> fields) : this(rawTemplate)
+        public Template(string name, string resourcePath, IEnumerable<IField> fields)
         {
             TemplateName = name;
+            ResourcePath = resourcePath;
             Fields = fields;
+        }
+
+        public override string ToString()
+        {
+            int invalidFields = Fields.Sum((f) => f.IsValid ? 0 : 1);
+            string allFieldsValid = invalidFields == 0 ? "All fields valid" : $"{invalidFields} invalid fields";
+            return $"{TemplateName} ({allFieldsValid})";
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Diplomatic.Core
             using (var r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();
-                templates = JsonConvert.DeserializeObject<List<Template>>(json, new TemplateConverter());
+                templates = JsonConvert.DeserializeObject<List<Template>>(json);
             }
         }
     }

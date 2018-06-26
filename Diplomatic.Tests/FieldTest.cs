@@ -11,9 +11,10 @@ namespace Diplomatic.Tests
 
         public FieldTest()
         {
-            subject = new Field("Test field", 1, 2, 3, 4);
+            subject = new Field("Test field", "#ff00ff", 1, 2, 3, 4);
             serialized = @"{
                 ""Name"":""Test field"",
+                ""Color"":""#ff00ff"",
                 ""XOffset"":1,
                 ""YOffset"":2,
                 ""Height"":3,
@@ -24,8 +25,9 @@ namespace Diplomatic.Tests
         [Fact]
         public void FieldSerializesToJSON()
         {
-            var output = JsonConvert.SerializeObject(subject);
+            string output = JsonConvert.SerializeObject(subject);
             Assert.Contains("Name", output);
+            Assert.Contains("Color", output);
             Assert.Contains("XOffset", output);
             Assert.Contains("YOffset", output);
             Assert.Contains("Width", output);
@@ -35,7 +37,7 @@ namespace Diplomatic.Tests
         [Fact]
         public void FieldDeserializesFromJSON()
         {
-            var field = JsonConvert.DeserializeObject<Field>(serialized);
+            Field field = JsonConvert.DeserializeObject<Field>(serialized);
             Assert.Equal("Test field", field.Name);
         }
 
@@ -56,7 +58,7 @@ namespace Diplomatic.Tests
         [Fact]
         public void DestructuresWithTupleAssignment()
         {
-            (var x, var y, var w, var h) = subject;
+            (double x, double y, double w, double h) = subject;
             Assert.Equal(1, x);
             Assert.Equal(2, y);
             Assert.Equal(3, w);

@@ -12,18 +12,22 @@ namespace Diplomatic.Core
         [JsonIgnore]
         public bool IsValid => !string.IsNullOrWhiteSpace(Value);
         [JsonProperty("XOffset")]
-        readonly double xOffset;
+        private readonly double xOffset;
         [JsonProperty("YOffset")]
-        readonly double yOffset;
+        private readonly double yOffset;
         [JsonProperty("Width")]
-        readonly double width;
+        private readonly double width;
         [JsonProperty("Height")]
-        readonly double height;
+        private readonly double height;
+        [JsonProperty("Color")]
+        private readonly string color;
 
-        public Field(string name, double x, double y, double w, double h)
+
+        public Field(string name, string col, double x, double y, double w, double h)
         {
             Name = name;
             Value = "";
+            color = col;
             xOffset = x;
             yOffset = y;
             width = w;
