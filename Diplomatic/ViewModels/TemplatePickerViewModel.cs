@@ -11,6 +11,7 @@ namespace Diplomatic.ViewModels
         public TemplatePickerViewModel()
         {
             TemplateList = new ResourceTemplateProvider("templates.json").GetTemplates().ToArray();
+
         }
     }
 }
