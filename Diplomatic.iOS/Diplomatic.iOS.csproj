@@ -178,6 +178,7 @@
     <BundleResource Include="Resources\donaldtrump.png" />
     <BundleResource Include="Resources\gavinbelson.png" />
     <BundleResource Include="Resources\waltdisney.png" />
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\employee.png" />
