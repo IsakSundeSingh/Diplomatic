@@ -27,7 +27,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Diplomatic.Core\Diplomatic.Core.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Assets\Images\gavinbelson.png" />
-  </ItemGroup>
 </Project>
