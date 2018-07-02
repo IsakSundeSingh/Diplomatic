@@ -29,13 +29,9 @@ namespace Diplomatic.Core
         public IDiploma Generate(Template template, byte[] imageData)
         {
             var image = Image.Load(imageData);
-            foreach (IField field in template.Fields)
+            foreach (Field field in template.Fields)
             {
-                (double xOffset, double yOffset, double width, double height) = field;
-                int x = (int)(xOffset * image.Width);
-                int y = (int)(yOffset * image.Height);
-                int h = (int)(height * image.Height);
-                int w = (int)(width * image.Width);
+                (int x, int y, int w, int h) = GetResized(image, field);
                 string text = field.Value;
                 Font font = SystemFonts.CreateFont("Arial", 72);
 
@@ -59,11 +55,7 @@ namespace Diplomatic.Core
             if (template.Signature != null && template.Signature.IsValid)
             {
                 Field field = template.Signature;
-                (double xOffset, double yOffset, double width, double height) = field;
-                int x = (int)(xOffset * image.Width);
-                int y = (int)(yOffset * image.Height);
-                int h = (int)(height * image.Height);
-                int w = (int)(width * image.Width);
+                (int x, int y, int w, int h) = GetResized(image, field);
                 var sig = Image.Load(field.Value);
                 sig.Mutate(img => img.Resize(w, h));
                 var topLeft = new Point(x, y);
@@ -72,6 +64,16 @@ namespace Diplomatic.Core
             }
 
             return new PNGDiploma(image.SavePixelData());
+        }
+
+        private (int x, int y, int w, int h) GetResized(Image<Rgba32> image, Field field)
+        {
+            (double xOffset, double yOffset, double width, double height) = field;
+            int x = (int)(xOffset * image.Width);
+            int y = (int)(yOffset * image.Height);
+            int w = (int)(width * image.Width);
+            int h = (int)(height * image.Height);
+            return (x, y, w, h);
         }
     }
 }

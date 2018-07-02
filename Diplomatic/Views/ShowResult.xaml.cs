@@ -15,14 +15,15 @@ namespace Diplomatic.Views
             InitializeComponent();
         }
 
-        public void ShowTemplate()
+        public void ShowTemplate(object sender, System.EventArgs e)
         {
             theImage.Source = "";
             Template template = ((TextFieldViewModel)BindingContext).SelectedTemplate;
-            IEnumerable<byte> imageData = new ResourceLoader().LoadBinary("Images." + template.ResourcePath);
-            Stream gen = new PNGGenerator().Generate(template, imageData.ToArray()).GetResult();
-            
-            theImage.Source = new ResourceLoader().LoadImage("employee.png");
+            IEnumerable<byte> imageData =
+                new ResourceLoader()
+                .LoadBinary("Images." + template.ResourcePath);
+            byte[] img = ((PNGDiploma)new PNGGenerator().Generate(template, imageData.ToArray())).imageData;
+            theImage.Source = ImageSource.FromStream(() => new MemoryStream(img));
         }
     }
 }
