@@ -1,16 +1,17 @@
 ﻿using System;
 using Xamarin.Forms;
-
+using Diplomatic.Core;
 namespace Diplomatic.ViewModels
 {
     public class SignaturePickerViewModel
     {
         // List of signature items to be displayed.
         public ImageCell[] SignatureItems { get; set; }
-        
-        public SignaturePickerViewModel()
-        {
+        public Template SelectedTemplate { get; set; }
 
+        public SignaturePickerViewModel(Template selectedTemplate)
+        {
+            SelectedTemplate = selectedTemplate;
             SignatureItems = new ImageCell[]
             {
                 // Creating a few signatures for testing purposes
