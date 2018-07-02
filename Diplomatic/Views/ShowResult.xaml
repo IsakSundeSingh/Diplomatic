@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Diplomatic.ViewModels"
+             xmlns:extensions="clr-namespace:Diplomatic.Extensions.Markup"
+             x:Class="Diplomatic.Views.ShowResult"
+             Title="Your diploma is ready">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="theImage" Source="{extensions:ImageResource diplomatic.png}" />
+            <Label Text="Debug me">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ShowTemplate"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

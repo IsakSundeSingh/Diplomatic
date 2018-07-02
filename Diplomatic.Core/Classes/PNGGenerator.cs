@@ -1,25 +1,34 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using SixLabors.Fonts;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Processing.Drawing;
 using SixLabors.ImageSharp.Processing.Text;
+using SixLabors.ImageSharp.Processing.Transforms;
 using SixLabors.Primitives;
 
 namespace Diplomatic.Core
 {
     public class PNGDiploma : IDiploma
     {
-        public readonly Image<Rgba32> image;
-        public PNGDiploma(Image<Rgba32> img) => image = img;
-        public void Save(string Path) => image.Save(Path);
+        public readonly byte[] imageData;
+        public PNGDiploma(byte[] image) => imageData = image;
+        public Stream GetResult() => new MemoryStream(imageData);
+        public void Save(string Path)
+        {
+            return;
+        }
     }
 
     public class PNGGenerator : IDiplomaGenerator
     {
-        public IDiploma Generate(Template template)
+        public IDiploma Generate(Template template, byte[] imageData)
         {
-            var image = Image.Load(template.ResourcePath);
+            var image = Image.Load(imageData);
             foreach (IField field in template.Fields)
             {
                 (double xOffset, double yOffset, double width, double height) = field;
@@ -41,24 +50,28 @@ namespace Diplomatic.Core
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Bottom
                 };
-                var center = new PointF(x + (w / 2), y + (h / 2));
+                var center = new Point(x + (w / 2), y + (h / 2));
 
+                var color = Rgba32.FromHex(field.Color);
                 image.Mutate(img => img
-                        .DrawText(textGraphicOptions, text, scaledFont, Rgba32.Black, center));
+                        .DrawText(textGraphicOptions, text, scaledFont, color, center));
             }
-            if (template.Signature != null)
+            if (template.Signature != null && template.Signature.IsValid)
             {
-                (double xOffset, double yOffset, double width, double height) = template.Signature;
+                Field field = template.Signature;
+                (double xOffset, double yOffset, double width, double height) = field;
                 int x = (int)(xOffset * image.Width);
                 int y = (int)(yOffset * image.Height);
                 int h = (int)(height * image.Height);
                 int w = (int)(width * image.Width);
-                Font font = SystemFonts.CreateFont("Arial", 72);
-                var center = new PointF(x + (w / 2), y + (h / 2));
-                image.Mutate(img => img.DrawText("signature here", font, Rgba32.Red, center));
+                var sig = Image.Load(field.Value);
+                sig.Mutate(img => img.Resize(w, h));
+                var topLeft = new Point(x, y);
+                var center = new Point(x + (w / 2), y + (h / 2));
+                image.Mutate(img => img.DrawImage(sig, 1.0f, topLeft));
             }
 
-            return new PNGDiploma(image);
+            return new PNGDiploma(image.SavePixelData());
         }
     }
 }

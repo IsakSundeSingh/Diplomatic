@@ -1,24 +1,24 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Diplomatic.Core;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 
 namespace Diplomatic.Utils
 {
     public class ResourceTemplateProvider
     {
-        readonly List<Template> templates;
+        private readonly List<Template> templates;
         public IEnumerable<Template> GetTemplates() => templates.Select(t => t);
 
         public ResourceTemplateProvider(string path)
         {
-            var res = new MemoryStream(new ResourceLoader().LoadBinary(path).ToArray());
-            using (var r = new StreamReader(res))
-            {
-                string json = r.ReadToEnd();
-                templates = JsonConvert.DeserializeObject<List<Template>>(json, new TemplateConverter());
-            }
+            byte[] bytes = new ResourceLoader().LoadBinary(path).ToArray();
+            string json = System.Text.Encoding.UTF8.GetString(bytes);
+            templates = JsonConvert.DeserializeObject<List<Template>>(json);
         }
     }
 }

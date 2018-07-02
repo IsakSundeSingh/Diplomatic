@@ -4,7 +4,17 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\employee.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Images\good_effort.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\Images\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Images\test.png" />
+    <EmbeddedResource Include="Assets\Images\student.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\templates.json">
@@ -19,13 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Views\TextFields.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Remove="Assets\employee.png" />
+    <None Remove="Assets\good_effort.png" />
     <None Remove="Assets\Images\logo.png" />
+    <None Remove="Assets\Images\test.png" />
+    <None Remove="Assets\student.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Diplomatic.Core\Diplomatic.Core.csproj" />

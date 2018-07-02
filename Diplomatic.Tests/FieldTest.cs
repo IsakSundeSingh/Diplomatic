@@ -39,6 +39,7 @@ namespace Diplomatic.Tests
         {
             Field field = JsonConvert.DeserializeObject<Field>(serialized);
             Assert.Equal("Test field", field.Name);
+            Assert.Equal("#ff00ff", field.Color);
         }
 
         [Fact]

@@ -119,7 +119,7 @@ namespace Diplomatic.Utils
 
             if (stream == null)
             {
-                throw new FileNotFoundException("Resource not found.", nameof(name));
+                throw new FileNotFoundException($"Resource not found at {path}", nameof(name));
             }
 
             return stream;

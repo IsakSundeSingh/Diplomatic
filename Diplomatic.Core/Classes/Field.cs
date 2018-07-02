@@ -19,15 +19,13 @@ namespace Diplomatic.Core
         private readonly double width;
         [JsonProperty("Height")]
         private readonly double height;
-        [JsonProperty("Color")]
-        private readonly string color;
+        public string Color { get; }
 
-
-        public Field(string name, string col, double x, double y, double w, double h)
+        public Field(string name, string color, double x, double y, double w, double h)
         {
             Name = name;
             Value = "";
-            color = col;
+            Color = color;
             xOffset = x;
             yOffset = y;
             width = w;

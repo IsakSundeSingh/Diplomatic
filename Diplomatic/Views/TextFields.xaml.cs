@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -13,8 +13,11 @@ namespace Diplomatic.Views
         }
         async void NextPage(object sender, EventArgs e)
         {
-            var next = new Signatures();
-            // We do not need to submit any info to the page here yet
+            var next = new ShowResult
+            {
+                BindingContext = BindingContext
+            };
+
             await Navigation.PushAsync(next);
         }
     }

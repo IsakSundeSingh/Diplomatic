@@ -14,7 +14,7 @@ namespace Diplomatic.Core
         public FileTemplateProvider(string path)
         {
             if (!File.Exists(path))
-                throw new ArgumentException($"File not found: {path}", nameof(path));
+                throw new ArgumentException($"File not found: {path}, searching from {Directory.GetCurrentDirectory()}", nameof(path));
 
             using (var r = new StreamReader(path))
             {
