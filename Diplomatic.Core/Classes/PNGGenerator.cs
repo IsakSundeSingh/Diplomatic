@@ -62,7 +62,6 @@ namespace Diplomatic.Core
                 var center = new Point(x + (w / 2), y + (h / 2));
                 image.Mutate(img => img.DrawImage(sig, 1.0f, topLeft));
             }
-
             return new PNGDiploma(image.SavePixelData());
         }
 

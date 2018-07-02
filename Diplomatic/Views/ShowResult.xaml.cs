@@ -19,6 +19,7 @@ namespace Diplomatic.Views
         {
             theImage.Source = "";
             Template template = ((TextFieldViewModel)BindingContext).SelectedTemplate;
+            template.Signature = null; // Disable signature while developing
             IEnumerable<byte> imageData =
                 new ResourceLoader()
                 .LoadBinary("Images." + template.ResourcePath);
