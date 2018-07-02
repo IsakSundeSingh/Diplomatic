@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Diplomatic.ViewModels" x:Class="Diplomatic.Views.Signatures" Title="Signatures">
-    <ContentPage.BindingContext>
-        <local:SignaturePickerViewModel />
-    </ContentPage.BindingContext>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Diplomatic.ViewModels" 
+             x:Class="Diplomatic.Views.Signatures" Title="Signatures">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,0,20,0" BackgroundColor="{StaticResource backgroundColor}">
@@ -34,6 +34,7 @@
                 <!-- Button to continue
                 Clicked="NextPage"
                 -->
+                <Label Text="{Binding SelectedTemplate.TemplateName}" />
                 <Button Text="Next" Style="{StaticResource nextPageButton}" />
             </StackLayout>
         </ScrollView>
