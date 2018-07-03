@@ -21,7 +21,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>11.0</string>
+	<string>11.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>Diplomatic</string>
 	<key>CFBundleIdentifier</key>
@@ -37,6 +37,8 @@
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 </dict>
 </plist>
