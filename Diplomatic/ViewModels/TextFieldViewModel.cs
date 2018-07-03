@@ -1,5 +1,3 @@
-using Diplomatic.Core;
-
 namespace Diplomatic.ViewModels
 {
     public class TextFieldViewModel

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Diplomatic.Core;
 using Diplomatic.ViewModels;
 using Xamarin.Forms;
 
