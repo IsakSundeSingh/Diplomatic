@@ -18,13 +18,7 @@ namespace Diplomatic.Views
         public void ShowTemplate(object sender, System.EventArgs e)
         {
             theImage.Source = "";
-            Template template = ((TextFieldViewModel)BindingContext).SelectedTemplate;
-            template.Signature = null; // Disable signature while developing
-            IEnumerable<byte> imageData =
-                new ResourceLoader()
-                .LoadBinary("Images." + template.ResourcePath);
-            byte[] img = ((PNGDiploma)new PNGGenerator().Generate(template, imageData.ToArray())).imageData;
-            theImage.Source = ImageSource.FromStream(() => new MemoryStream(img));
+            theImage.Source = ImageSource.FromUri(new System.Uri("https://qri7p78aml.execute-api.eu-west-2.amazonaws.com/dev/good%20effort?name=Dualog%20Student"));
         }
     }
 }
