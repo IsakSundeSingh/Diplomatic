@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Diplomatic.Utils.Triggers"
              x:Class="Diplomatic.App">
 	<Application.Resources>
         <Color x:Key="backgroundColor">#e5f4f2</Color>
@@ -13,6 +14,31 @@
             <Setter Property="TextColor" Value="White"/>
             <Setter Property="FontSize" Value="Small"/>
             <Setter Property="WidthRequest" Value="75" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Style.Triggers>
+                <Trigger TargetType="Label"
+                         Property="IsVisible" Value="True">
+                    <Trigger.EnterActions>
+                        <local:OpacityTriggerAction StartsFrom="0"/>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <local:OpacityTriggerAction StartsFrom="1"/>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="Opacity" Value="0.75"/>
+            <Style.Triggers>
+                <Trigger TargetType="Entry"
+                         Property="IsFocused" Value="True">
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <OnPlatform
