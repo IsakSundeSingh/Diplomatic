@@ -100,6 +100,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resources\good_effort.png" />
     <None Include="Resources\student.png" />
+    <Compile Include="Classes\Picture_iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png">
@@ -206,5 +207,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
   </ItemGroup>
 </Project>
