@@ -4,7 +4,7 @@
              x:Class="Diplomatic.Views.Result"
              Title="Result">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Save" Order="Primary" Text="Save" Priority="1" />
+        <ToolbarItem Name="Save" Order="Primary" Text="Save" Priority="1" Activated="SaveButtonClicked" />
         <ToolbarItem Name="Share" Order="Primary" Text="Share" Priority="2" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
