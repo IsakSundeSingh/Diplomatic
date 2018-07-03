@@ -35,7 +35,7 @@
                 Clicked="NextPage"
                 -->
                 <Label Text="{Binding SelectedTemplate.TemplateName}" />
-                <Button Text="Next" Style="{StaticResource nextPageButton}" />
+                <Button Text="Next" Style="{StaticResource nextPageButton}" Clicked="NextPage"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
