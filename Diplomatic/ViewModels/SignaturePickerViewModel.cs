@@ -1,6 +1,4 @@
-﻿using System;
 using Xamarin.Forms;
-using Diplomatic.Core;
 namespace Diplomatic.ViewModels
 {
     public class SignaturePickerViewModel

@@ -1,5 +1,4 @@
 using System.Linq;
-using Diplomatic.Core;
 using Diplomatic.Utils;
 
 
@@ -10,8 +9,7 @@ namespace Diplomatic.ViewModels
         public Template[] TemplateList { get; set; }
         public TemplatePickerViewModel()
         {
-            TemplateList = new ResourceTemplateProvider("templates.json").GetTemplates().ToArray();
-
+            TemplateList = new WebTemplateProvider().GetTemplates().ToArray();
         }
     }
 }

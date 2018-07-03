@@ -1,10 +1,8 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using Newtonsoft.Json;
 
-namespace Diplomatic.Core
+namespace Diplomatic
 {
     [Serializable]
     public class Template

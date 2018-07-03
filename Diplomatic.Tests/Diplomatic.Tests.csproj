@@ -245,10 +245,6 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Diplomatic.Core\Diplomatic.Core.csproj">
-      <Project>{81224382-7b18-441f-9c7e-cc7cebd114d7}</Project>
-      <Name>Diplomatic.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Diplomatic\Diplomatic.csproj">
       <Project>{cdb8b215-5c59-4f03-a016-e3c7a8deabcc}</Project>
       <Name>Diplomatic</Name>

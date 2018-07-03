@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
+using System;
 using Diplomatic.ViewModels;
-using Diplomatic.Core;
+using Xamarin.Forms;
 namespace Diplomatic.Views
 {
     public partial class TextFields : ContentPage
