@@ -9,12 +9,13 @@ namespace Diplomatic.Views
         {
             InitializeComponent();
         }
-        async void NextPage(object sender, EventArgs e)
-        {
-            var next = new Signatures();
 
-            next.BindingContext = new SignaturePickerViewModel(((TextFieldViewModel)BindingContext).SelectedTemplate);
-            // We do not need to submit any info to the page here yet
+        private async void NextPage(object sender, EventArgs e)
+        {
+            var next = new Signatures
+            {
+                BindingContext = new SignaturePickerViewModel(((TextFieldViewModel)BindingContext).SelectedTemplate)
+            };
             await Navigation.PushAsync(next);
         }
     }
