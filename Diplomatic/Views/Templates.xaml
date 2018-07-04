@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:extensions="clr-namespace:Diplomatic.Extensions.Markup;assembly=Diplomatic" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Diplomatic.Views.Templates" Title="Templates">
     <ContentPage.Content>
         <StackLayout Padding="20,0,20,0" BackgroundColor="{StaticResource backgroundColor}">
-            <Label Text="Pick a template" HorizontalOptions="Center" />
+            <!--<Label Text="Pick a template" HorizontalOptions="Center" FontSize="Large"/>-->
             <!-- Insert template logic here-->
             <ListView ItemsSource="{Binding TemplateList}" ItemSelected="OnSelection" SeparatorVisibility="None" BackgroundColor="Transparent">
                 <ListView.ItemTemplate>
