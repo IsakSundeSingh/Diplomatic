@@ -17,16 +17,13 @@
         </Style>
 
         <Style TargetType="Label">
-            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Opacity" Value="1"/>
             <Style.Triggers>
                 <Trigger TargetType="Label"
                          Property="IsVisible" Value="True">
                     <Trigger.EnterActions>
                         <local:OpacityTriggerAction StartsFrom="0"/>
                     </Trigger.EnterActions>
-                    <Trigger.ExitActions>
-                        <local:OpacityTriggerAction StartsFrom="1"/>
-                    </Trigger.ExitActions>
                 </Trigger>
             </Style.Triggers>
         </Style>
