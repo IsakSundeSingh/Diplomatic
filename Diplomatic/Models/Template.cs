@@ -1,24 +1,20 @@
-using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Diplomatic
+namespace Diplomatic.Models
 {
-    [Serializable]
     public class Template
     {
-        [JsonProperty("name")]
-        public string TemplateName { get; set; }
-        [JsonProperty("path")]
-        public string Path { get; set; }
         [JsonProperty("fields")]
-        public IEnumerable<Field> Fields { get; set; }
+        public IEnumerable<Field> Fields { get; }
+        public Signature Signature { get; set; }
+        public string Name { get; set; }
+        public bool HasSignature { get; }
 
-        public Template(string name, string path, IEnumerable<Field> fields)
+        public Template(bool signature, IEnumerable<Field> fields)
         {
-            TemplateName = name;
-            Path = path;
             Fields = fields;
+            HasSignature = signature;
         }
     }
 }

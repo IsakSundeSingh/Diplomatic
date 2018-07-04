@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 namespace Diplomatic.Utils
 {
+    using Models;
     public class WebTemplateProvider
     {
         private readonly List<Template> templates;
@@ -22,7 +23,12 @@ namespace Diplomatic.Utils
             using (var reader = new StreamReader(response.GetResponseStream()))
             {
                 string content = reader.ReadToEnd();
-                templates = JsonConvert.DeserializeObject<List<Template>>(content);
+                Dictionary<string, Template> rawTemplates = JsonConvert.DeserializeObject<Dictionary<string, Template>>(content);
+                foreach (var entry in rawTemplates)
+                {
+                    entry.Value.Name = entry.Key;
+                }
+                templates = rawTemplates.Values.ToList();
             }
         }
     }

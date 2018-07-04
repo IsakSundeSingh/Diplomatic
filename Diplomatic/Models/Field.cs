@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace Diplomatic
+namespace Diplomatic.Models
 {
     [Serializable]
     public class Field

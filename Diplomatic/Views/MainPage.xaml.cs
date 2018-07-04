@@ -28,8 +28,5 @@ namespace Diplomatic.Views
         {
             Device.OpenUri(new Uri("https://github.com/Dualog-students/Diplomatic"));
         }
-
-
-
     }
 }

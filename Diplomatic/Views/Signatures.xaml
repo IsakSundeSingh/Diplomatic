@@ -8,7 +8,7 @@
             <StackLayout Padding="20,0,20,0" BackgroundColor="{StaticResource backgroundColor}">
                 <Label Text="Pick a signature" HorizontalOptions="Center"/>
                 <!-- Display list of signatures -->
-                <ListView ItemsSource="{Binding SignatureItems}" BackgroundColor="Transparent">
+                <ListView ItemsSource="{Binding Signatures}" ItemSelected="NextPage" BackgroundColor="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -19,10 +19,10 @@
                                     </Grid.ColumnDefinitions>
 
                                     <!--Image -->
-                                    <Image Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFit" />
+                                    <Image Grid.Column="0" Source="{Binding ImageUri}" Aspect="AspectFit" />
                                     <!-- Text -->
                                     <Label Grid.Column="1"
-                                           Text="{Binding Text}"
+                                           Text="{Binding Name}"
                                            FontAttributes="Bold"
                                            HorizontalTextAlignment="Center"
                                            VerticalTextAlignment="End" />
@@ -31,11 +31,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <!-- Button to continue
-                Clicked="NextPage"
-                -->
-                <Label Text="{Binding SelectedTemplate.TemplateName}" />
-                <Button Text="Next" Style="{StaticResource nextPageButton}" Clicked="NextPage"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
