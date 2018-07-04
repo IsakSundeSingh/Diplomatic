@@ -21,12 +21,13 @@ namespace Diplomatic.Droid.Classes
             {
                 // Write file to the android disk
                 System.IO.File.WriteAllBytes(FilePath, imageArray);
+
                 // Now it needs to be added to image gallery
                 var mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
                 mediaScanIntent.SetData(Android.Net.Uri.FromFile(new File(FilePath)));
-                Xamarin.Forms.Forms.Context.SendBroadcast(mediaScanIntent);
+                Android.App.Application.Context.SendBroadcast(mediaScanIntent);
             }
-            catch(System.Exception e)
+            catch (System.Exception e)
             {
                 System.Console.WriteLine(e.ToString());
             }
