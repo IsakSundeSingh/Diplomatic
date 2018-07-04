@@ -18,10 +18,10 @@ namespace Diplomatic.Views
         {
             using (var webClient = new WebClient())
             {
+                string Filename = ((ResultViewModel)BindingContext).Filename;
                 byte[] imageBytes = await webClient.DownloadDataTaskAsync(((ResultViewModel)BindingContext).ImageUri);
-                DependencyService.Get<IPicture>().SavePictureToDisk("Navn", imageBytes);
-                await DisplayAlert("Image save", "Your diploma has been saved!", "Ok");
-
+                DependencyService.Get<IPicture>().SavePictureToDisk(Filename, imageBytes);
+                await DisplayAlert("Save diploma", "Your diploma has been saved!", "OK");
             }
         }
     }

@@ -9,7 +9,6 @@ namespace Diplomatic.iOS.Classes
 {
     public class Picture_iOS : IPicture
     {
-        
         public void SavePictureToDisk(string filename, byte[] imageArray)
         {
             var Img = new UIImage(NSData.FromArray(imageArray));
@@ -18,7 +17,6 @@ namespace Diplomatic.iOS.Classes
                 if (error != null)
                 {
                     Console.WriteLine(error);
-                    throw new Exception("Yeeeeeeeeeeeeeeeeeet");
                 }
             });
         }
