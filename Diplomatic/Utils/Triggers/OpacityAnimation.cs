@@ -14,7 +14,6 @@ namespace Diplomatic.Utils.Triggers
             visual.Animate("label", new Animation((d) => {
                 var val = StartsFrom == 0 ? d : 1 - d;
                 visual.Opacity = val;
-
             }),
             length: 500,
             easing: Easing.Linear);
