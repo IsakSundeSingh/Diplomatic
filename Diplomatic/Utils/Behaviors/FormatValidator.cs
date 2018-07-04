@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
 namespace Diplomatic.Utils.Behaviors
@@ -20,9 +20,9 @@ namespace Diplomatic.Utils.Behaviors
 
         public void ValidateFormat(object sender, TextChangedEventArgs args)
         {
-            string text = (sender as Entry).Text;
-            var regex = new Regex(Pattern, RegexOptions.Compiled);
-            (sender as Entry).TextColor = regex.IsMatch(text) ? Color.Default : Color.Red;
+            var entry = (Entry)sender;
+            string text = entry.Text;
+            entry.TextColor = Regex.IsMatch(text, Pattern) ? Color.Default : Color.Red;
         }
     }
 }

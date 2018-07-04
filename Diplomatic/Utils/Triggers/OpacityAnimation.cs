@@ -8,8 +8,6 @@ namespace Diplomatic.Utils.Triggers
     public class OpacityTriggerAction : TriggerAction<VisualElement>
     {
         public int StartsFrom { set; get; } = 0;
-        //public double Opacity { get; set; } = 1;
-        //public uint Duration { get; set; } = 10000;
 
         protected override void Invoke(VisualElement visual)
         {
@@ -18,7 +16,7 @@ namespace Diplomatic.Utils.Triggers
                 visual.Opacity = val;
 
             }),
-            length: 500, // milliseconds
+            length: 500,
             easing: Easing.Linear);
         }
     }
