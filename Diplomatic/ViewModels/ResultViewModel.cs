@@ -8,6 +8,11 @@ namespace Diplomatic.ViewModels
     public class ResultViewModel
     {
         public Uri ImageUri { get; }
-        public ResultViewModel(Uri imageuri) => ImageUri = imageuri;
+        public string Filename { get; set; } 
+        public ResultViewModel(Uri imageuri, string filename)
+        {
+            ImageUri = imageuri;
+            Filename = filename;
+        }
     }
 }

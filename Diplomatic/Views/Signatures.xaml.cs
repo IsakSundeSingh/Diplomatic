@@ -15,9 +15,11 @@ namespace Diplomatic.Views
         async void NextPage(object sender, EventArgs e)
         {
             var template = ((SignaturePickerViewModel)BindingContext).SelectedTemplate;
+            string Filename = template.TemplateName + "_";
             var queryParams = new List<string> { };
             foreach (var field in template.Fields)
             {
+                Filename += field.Name + "_" + field.Value +"_";
                 queryParams.Add($"{field.Name.ToLower()}={field.Value}");
             }
             var query = string.Join("&", queryParams.ToArray());
@@ -25,7 +27,7 @@ namespace Diplomatic.Views
             var endpoint = new Uri(Uri.EscapeUriString(final));
             var next = new Result
             {
-                BindingContext = new ResultViewModel(endpoint)
+                BindingContext = new ResultViewModel(endpoint, Filename)
             };
             await Navigation.PushAsync(next);
         }
