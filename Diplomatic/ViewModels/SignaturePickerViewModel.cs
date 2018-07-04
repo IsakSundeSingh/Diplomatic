@@ -7,7 +7,6 @@ namespace Diplomatic.ViewModels
 
     public class SignaturePickerViewModel
     {
-        // List of signature items to be displayed.
         public Signature[] Signatures { get; set; }
         public Template SelectedTemplate { get; set; }
 

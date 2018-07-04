@@ -1,5 +1,5 @@
-using Newtonsoft.Json;
 using System;
+using Newtonsoft.Json;
 
 namespace Diplomatic.Models
 {
@@ -10,6 +10,8 @@ namespace Diplomatic.Models
         public string Name { get; }
         [JsonIgnore]
         public string Value { get; set; }
+        [JsonIgnore]
+        public bool IsValid => !string.IsNullOrEmpty(Value);
 
         public Field(string name)
         {
