@@ -15,7 +15,7 @@ namespace Diplomatic.Models
             get
             {
                 string basePath = $"https://qri7p78aml.execute-api.eu-west-2.amazonaws.com/dev/preview/signature/{Id}";
-                return new Uri($"{basePath}?width=200&height=80");
+                return new Uri(basePath);
             }
         }
     }

@@ -19,7 +19,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <!--Image -->
-                                    <Image Grid.Column="0" Source="{Binding ImageUri}" Aspect="AspectFit" />
+                                    <Image Grid.Column="0" Source="{Binding ImageUri}" Aspect="AspectFit" HorizontalOptions="Start"/>
                                     <!-- Text -->
                                     <Label Grid.Column="1"
                                            Text="{Binding Name}"
