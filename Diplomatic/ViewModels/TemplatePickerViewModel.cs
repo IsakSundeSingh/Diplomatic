@@ -1,15 +1,17 @@
 using System.Linq;
-using Diplomatic.Utils;
-
 
 namespace Diplomatic.ViewModels
 {
+    using Models;
+    using Utils;
+
     public class TemplatePickerViewModel
     {
-        public Template[] TemplateList { get; set; }
+        public Template[] Templates { get; set; }
+
         public TemplatePickerViewModel()
         {
-            TemplateList = new WebTemplateProvider().GetTemplates().ToArray();
+            Templates = new WebTemplateProvider().GetTemplates().ToArray();
         }
     }
 }

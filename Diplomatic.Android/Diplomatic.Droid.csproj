@@ -79,12 +79,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\donaldtrump.png" />
-    <AndroidResource Include="Resources\drawable\gavinbelson.png" />
-    <AndroidResource Include="Resources\drawable\waltdisney.png" />
-    <AndroidResource Include="Resources\drawable\employee.png" />
-    <AndroidResource Include="Resources\drawable\good_effort.png" />
-    <AndroidResource Include="Resources\drawable\student.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon512.png" />

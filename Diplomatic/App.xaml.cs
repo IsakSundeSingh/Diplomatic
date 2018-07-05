@@ -1,12 +1,12 @@
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Diplomatic.Views;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Diplomatic
 {
-	public partial class App : Application
+    using Views;
+
+    public partial class App : Application
 	{
 		public App ()
 		{

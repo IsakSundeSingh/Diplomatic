@@ -17,7 +17,7 @@ namespace Diplomatic.Tests
             public void CanLoadText()
             {
                 // TODO: Fix dependency on actual file existence
-                string resource = "templates.json";
+                string resource = "Images.test.png";
 
                 var loader = new ResourceLoader();
                 string result = loader.LoadText(resource);
@@ -52,7 +52,7 @@ namespace Diplomatic.Tests
             public async Task CanLoadText()
             {
                 // TODO: Fix dependency on actual file existence
-                string resource = "templates.json";
+                string resource = "Images.test.png";
                 var loader = new ResourceLoader();
 
                 string result = await loader.LoadTextAsync(resource);
@@ -118,7 +118,7 @@ namespace Diplomatic.Tests
             public void CanLoadBinary()
             {
                 // TODO: Fix dependency on actual file existence
-                string resource = "templates.json";
+                string resource = "Images.test.png";
                 var loader = new ResourceLoader();
 
                 byte[] bytes = loader.LoadBinary(resource).ToArray();
@@ -150,7 +150,7 @@ namespace Diplomatic.Tests
             public async Task CanLoadBinary()
             {
                 // TODO: Fix dependency on actual file existence
-                string resource = "templates.json";
+                string resource = "Images.test.png";
                 var loader = new ResourceLoader();
 
                 byte[] bytes = (await loader.LoadBinaryAsync(resource)).ToArray();

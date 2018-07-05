@@ -98,8 +98,6 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Resources\good_effort.png" />
-    <None Include="Resources\student.png" />
     <Compile Include="Classes\Picture_iOS.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,13 +198,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\donaldtrump.png" />
-    <BundleResource Include="Resources\gavinbelson.png" />
-    <BundleResource Include="Resources\waltdisney.png" />
     <BundleResource Include="Resources\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\employee.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />

@@ -1,7 +1,4 @@
 using System;
-using System.Linq;
-using Diplomatic.Utils;
-
 
 namespace Diplomatic.ViewModels
 {
